@@ -1,0 +1,59 @@
+: 1557153128:0;install-VSCode
+: 1557153147:0;code -h
+: 1557153168:0;history | code -
+: 1557153222:0;bg
+: 1557153228:0;firefox
+: 1557153413:0;systemctl status lightdm.service
+: 1557153423:0;systemctl restart lightdm.service
+: 1557153543:0;vim $histfile
+: 1557153863:0;cd Desktop
+: 1557153872:0;cd Pulpit
+: 1557153881:0;cd materialy
+: 1557154076:0;cd ~
+: 1557154091:0;cd /etc/lightdm
+: 1557154112:0;ll
+: 1557154126:0;cat users.conf
+: 1557154174:0;cat lightdm.conf
+: 1557154191:0;cat lightdm.conf-o
+: 1557154293:0;code c4
+: 1557154307:0;code c4-pwwifi
+: 1557154457:0;cd ..
+: 1557154459:0;cd
+: 1557154462:0;ls -la
+: 1557154486:0;sudo systemctl restart lightdm.service
+: 1557154544:0;mv .config .config.old
+: 1557154692:0;install_vb
+: 1557154738:0;code Pulpit/materialy/c4
+: 1557155178:0;script historiaC4L1
+: 1557155487:0;echo "Zmiana sieci na pw-wifi-sudents. WczeŃ�niej było ZETIS"
+: 1557155807:0;cd Pulpit/materialy
+: 1557155835:0;code -r c4-nmcli
+: 1557155925:0;nmcli status
+: 1557155963:0;nmcli nm status
+: 1557155982:0;nmcli dev list
+: 1557155993:0;nmcli dev list show
+: 1557156038:0;man nmcli-examples
+: 1557156167:0;echo "Wyłă�czenie network managera"
+: 1557156197:0;code -r c4-pwwifi
+: 1557156314:0;ip link set dev wlp2s0 up
+: 1557156317:0;sudo ip link set dev wlp2s0 up
+: 1557156320:0;iwlist scanning
+: 1557156360:0;wpa_supplicant
+: 1557156537:0;ip link set dev wlp2s0 down
+: 1557156541:0;sudo ip link set dev wlp2s0 down
+: 1557157159:0;ifconfig
+: 1557157224:0;ip link set dev eno2 down
+: 1557157227:0;suod ip link set dev eno2 down
+: 1557157255:0;sudo ip link set dev eno2 down
+: 1557157617:0;ping 1.1.1.1
+: 1557157624:0;dhclient wlp2s0
+: 1557157628:0;sudo dhclient wlp2s0
+: 1557157863:0;ip r -h
+: 1557157873:0;man ip
+: 1557157886:0;ip route
+: 1557158022:0;ip route add default 10.146.146.5 via eno2
+: 1557158040:0;ip route change default 10.146.146.5 via eno2
+: 1557158053:0;ip route set default 10.146.146.5 via eno2
+: 1557158067:0;ip route h
+: 1557158210:0;ip r
+: 1557158379:0;sudo poweroff

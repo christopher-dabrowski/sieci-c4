@@ -1,0 +1,93 @@
+Script started on pon, 13 maj 2019, 16:47:03
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~]1;~[0m[27m[24m[J[01;35msc [01;32m➜  [36m~[00m [K[?1h=[?2004h[1m[31mn[0m[39m[90metstat -rn[39m[10D[1m[31mn[1m[31mp[0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [9D[1m[31mn[0m[39m[0m[90me[90mtstat -rn[39m[10D[0m[32mn[32me[32mt[32ms[32mt[32ma[32mt[39m[39m [39m-[39mr[39mn[?1l>[?2004l
+]2;netstat -rn]1;netstatKernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+0.0.0.0         10.146.146.5    0.0.0.0         UG        0 0          0 eno1
+10.146.0.0      0.0.0.0         255.255.0.0     U         0 0          0 eno1
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~]1;~[0m[27m[24m[J[01;35msc [01;32m➜  [36m~[00m [K[?1h=[?2004h[H[2J[0m[27m[24m[J[01;35msc [01;32m➜  [36m~[00m [K[1m[31mi[0m[39m[90mnstall-VSCode[39m[13D[0m[32mi[32mp[39m[90m [90ma[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [12D[39m [39ma[?1l>[?2004l
+]2;ip a]1;ip1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eno1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 00:22:4d:50:98:b4 brd ff:ff:ff:ff:ff:ff
+    inet 10.146.225.12/16 brd 10.146.255.255 scope global eno1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::222:4dff:fe50:98b4/64 scope link 
+       valid_lft forever preferred_lft forever
+3: wlp3s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether 00:24:d7:7e:af:54 brd ff:ff:ff:ff:ff:ff
+4: wlx00223f01f912: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether 00:22:3f:01:f9:12 brd ff:ff:ff:ff:ff:ff
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~]1;~[0m[27m[24m[J[01;35msc [01;32m➜  [36m~[00m [K[?1h=[?2004h[H[2J[0m[27m[24m[J[01;35msc [01;32m➜  [36m~[00m [K[32mip[39m a[32mn[32me[32mt[32ms[32mtat[39m -rn[?1l>[?2004l
+]2;netstat -rn]1;netstatKernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+0.0.0.0         10.146.146.5    0.0.0.0         UG        0 0          0 eno1
+0.0.0.0         10.68.0.1       0.0.0.0         UG        0 0          0 wlx00223f01f912
+10.68.0.0       0.0.0.0         255.255.0.0     U         0 0          0 wlx00223f01f912
+10.146.0.0      0.0.0.0         255.255.0.0     U         0 0          0 eno1
+169.254.0.0     0.0.0.0         255.255.0.0     U         0 0          0 wlx00223f01f912
+192.0.2.4       10.68.0.1       255.255.255.255 UGH       0 0          0 wlx00223f01f912
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~]1;~[0m[27m[24m[J[01;35msc [01;32m➜  [36m~[00m [K[?1h=[?2004h[32mnetstat[39m -rn[11D[32mi[32mp[39m[39m [39ma[39m [39m [39m     [?1l>[?2004l
+]2;ip a]1;ip1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eno1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 00:22:4d:50:98:b4 brd ff:ff:ff:ff:ff:ff
+    inet 10.146.225.12/16 brd 10.146.255.255 scope global eno1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::222:4dff:fe50:98b4/64 scope link 
+       valid_lft forever preferred_lft forever
+3: wlp3s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether 00:24:d7:7e:af:54 brd ff:ff:ff:ff:ff:ff
+4: wlx00223f01f912: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:22:3f:01:f9:12 brd ff:ff:ff:ff:ff:ff
+    inet 10.68.31.177/16 brd 10.68.255.255 scope global dynamic wlx00223f01f912
+       valid_lft 3503sec preferred_lft 3503sec
+    inet6 fe80::222:3fff:fe01:f912/64 scope link 
+       valid_lft forever preferred_lft forever
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~]1;~[0m[27m[24m[J[01;35msc [01;32m➜  [36m~[00m [K[?1h=[?2004h[32mc[39m[90md ~[39m[32mc[32md[39m[39m [90m [32mc[39m[90md[39m[39m [39m [39m [39m [32mc[39m[90md ~[39m[32mc[32md[39m[39m [90m [32mc[39m[90md[39m[39m [39m [39m [39m [32mc[39m[90md ~[39m[32mc[32md[39m[39m [90m [32mc[39m[90md[39m[39m [39m [39m [39m [32ml[39m[90ms[39m[32ml[32ms[39m [90m-la[39m[39m[4mm[24m[39m [39m [24m[90m-[90mla[39m[39m[4m.[24m[90m.[90m/[90mpietkap[39m[9D[4m.[39m[4m.[24m[4m.[39m[4m/[24m[4m.[24m[24m[90m/[39m[4m.[24m[24m[90m.[24m[90m-[90ml[90ma[39m[39m [39m [39m [39m [39m [39m [39m [10D[39m[4mD[24m[39m [39m [4mD[4me[24m[24mD[24mek[39ml[39ms[4C[32ml[32ms[39m [4mD[4me[24m [4me[4msktop[1m[4m/[0m[24m[4mp[24m[0m[24m [4mo[24m[24m [4mt[24m[24m [4mk[24m[24m [4ms[24m[24m [4me[24m[24m [4mD[24m[24m [24m[90m-[90mla[39m[39m [39m [39m  [90m-la[39m[39m[4mP[24m[39m [39m [4mP[4mu[24m[4mu[4ml[24m[4ml[4mp[24m[4mp[4mi[24m[4mi[4mt[24m[?1l>[?2004l
+]2;ls --color=tty Pulpit]1;ls[0m[01;36mmaterialy[0m
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~]1;~[0m[27m[24m[J[01;35msc [01;32m➜  [36m~[00m [K[?1h=[?2004h[32mls[39m [4mPulpit[24m[32ml[39m[39m [4mP[4mu[4ml[4mp[4mi[4mt[24m[24m [8D[32ml[32ml[39m[24m [4mP[4mu[4ml[4mp[4mi[4mt[24m[?1l>[?2004l
+]2;ls --color=tty -lh Pulpit]1;lltotal 0
+lrwxr-xr-x 1 dabrowk1 stud 23 mar 12 07:32 [0m[01;36mmaterialy[0m -> [01;34m/usr/local/zetis/labsk/[0m
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~]1;~[0m[27m[24m[J[01;35msc [01;32m➜  [36m~[00m [K[?1h=[?2004h[32mc[39m[90md ~[39m[32mc[32md[39m[39m [39m[4mD[24m[90mesktop[39m[4mD[39m[4me[24m[4me[39m[4ms[39m[4mk[39m[4mt[39m[4mo[39m[4mp[1m[4m/[0m[24m[4mp[24m[0m[24m [?1l>[?2004l
+]2;cd Desktop]1;cd[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~/Desktop]1;~/Desktop[0m[27m[24m[J[01;35msc [01;32m➜  [36mDesktop[00m [K[?1h=[?2004h[32ml[39m[90ml Pulpit[39m[8D[32ml[32mn[39m[39m [39m [39m [39m [39m [39m [39m  -s [7m[4m/usr/local/zetis/labsk/[27m[24m[23D[27m[4m/[27m[4mu[27m[4ms[27m[4mr[27m[4m/[27m[4ml[27m[4mo[27m[4mc[27m[4ma[27m[4ml[27m[4m/[27m[4mz[27m[4me[27m[4mt[27m[4mi[27m[4ms[27m[4m/[27m[4ml[27m[4ma[27m[4mb[27m[4ms[27m[4mk[27m[4m/[24m[?1l>[?2004l
+]2;ln -s /usr/local/zetis/labsk/]1;ln[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~/Desktop]1;~/Desktop[0m[27m[24m[J[01;35msc [01;32m➜  [36mDesktop[00m [K[?1h=[?2004h[1m[31me[0m[39m[90mcho a[39m[1m[31me[1m[31mc[0m[39m[1m[31me[1m[31mc[1m[31mh[0m[39m[0m[32me[0m[32mc[0m[32mh[32mo[39m[39m [33m"[39m[90mWyłączenie network managera"[39m[28D[33m"[33mT[39m[90mE[90mS[90mT[90m"[90m [90m|[90m [90mm[90ma[90mi[90ml[90m [90m-[90ms[90m [90m"[90mM[90ma[90mi[90ml[90m [90mt[90me[90ms[90mt[90mo[90mw[90my" dabrowk1[39m[38D[33mT[33me[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [37D[33me[33mr[39m[33mr[33ma[39m[33ma[33mz[39m[33mz[33m [39m[33m [33mp[39m[33m [39m[39m [33m [33mj[39m[33mj[33me[39m[33me[33ms[39m[33me[39m[39m [33me[33mt[39m[33mt[33m [39m[33m [33mp[39m[33mp[33mo[39m[33mo[33md[39m[33md[33mł[39m[33mł[33mą[39m[33mą[33mc[39m[33mc[33mz[39m[33mc[39m[39m [33mą[39m[39m [33mł[39m[39m [33md[39m[39m [33md[33ml[39m[33ml[33ma[39m[33ma[33mc[39m[33mc[33mz[39m[33mz[33me[39m[33me[33mn[39m[33mn[33mi[39m[33mi[33me[39m[33me[33m [39m[33m [33mp[39m[33mp[33mr[39m[33mr[33mz[39m[33mz[33me[39m[33me[33md[39m[33me[39m[39m [33me[33mz[39m[33mz[33m [39m[33m [33mG[39m[33mG[33mU[39m[33mU[33mI[39m[33mI[33m [39m[33m [33md[39m[33md[33mo[39m[33mo[33m [39m[33m [33mp[39m[33mp[33mw[39m[33mw[33m.[39m[33m.[33me[39m[33me[33md[39m[33md[33mu[39m[33mu[33m.[39m[33m.[33mp[39m[33mp[33ml[39m[33ml[33m"[39m[?1l>[?2004l
+]2;echo "Teraz jet podlaczenie przez GUI do pw.edu.pl"]1;echoTeraz jet podlaczenie przez GUI do pw.edu.pl
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~/Desktop]1;~/Desktop[0m[27m[24m[J[01;35msc [01;32m➜  [36mDesktop[00m [K[?1h=[?2004h[H[2J[0m[27m[24m[J[01;35msc [01;32m➜  [36mDesktop[00m [K[1m[31mi[0m[39m[90mp a[39m[0m[32mi[32mp[39m[39m [39ma[?1l>[?2004l
+]2;ip a]1;ip1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eno1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 00:22:4d:50:98:b4 brd ff:ff:ff:ff:ff:ff
+    inet 10.146.225.12/16 brd 10.146.255.255 scope global eno1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::222:4dff:fe50:98b4/64 scope link 
+       valid_lft forever preferred_lft forever
+3: wlp3s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether 00:24:d7:7e:af:54 brd ff:ff:ff:ff:ff:ff
+5: wlx00223f01f912: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:22:3f:01:f9:12 brd ff:ff:ff:ff:ff:ff
+    inet 10.68.31.177/16 brd 10.68.255.255 scope global dynamic wlx00223f01f912
+       valid_lft 3387sec preferred_lft 3387sec
+    inet6 fe80::222:3fff:fe01:f912/64 scope link 
+       valid_lft forever preferred_lft forever
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~/Desktop]1;~/Desktop[0m[27m[24m[J[01;35msc [01;32m➜  [36mDesktop[00m [K[?1h=[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~/Desktop]1;~/Desktop[0m[27m[24m[J[01;35msc [01;31m➜  [36mDesktop[00m [K[?1h=[?2004h[1m[31mW[0m[39m[90mLAN=wlp2s0[39m[10D[1m[31mW[1m[31mL[0m[39m[1m[31mW[1m[31mL[1m[31mA[0m[39m[1m[31mA[1m[31mT[0m[39m[39m [39m [39m [39m [39m [39m [39m [1m[31mA[0m[39m[0m[90mN[90m=wlp2s0[39m[8D[0m[39mW[0m[39mL[0m[39mA[39mN[39m=[39mw[39ml[39mp[39m2[39ms[39m0s0 3s0[?1l>[?2004l
+]2;WLAN=wlp3s0 ]1;[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~/Desktop]1;~/Desktop[0m[27m[24m[J[01;35msc [01;32m➜  [36mDesktop[00m [K[?1h=[?2004h[1m[7m[31m^?[0m[27m[39m[0m[27m[39m [0m[27m[39m [1m[31mm[0m[39m[90man screen[39m[9D[0m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [10D[1m[31mM[0m[39m[90mAC=00:24:d7:92:0e:dc[39m[20D[1m[31mM[1m[31mA[0m[39m[1m[31mM[1m[31mA[1m[31mC[0m[39m[0m[39mM[0m[39mA[0m[39mC[39m=[39m[7m0[39m[7m0[39m[7m:[39m[7m2[39m[7m4[39m[7m:[39m[7md[39m[7m7[39m[7m:[39m[7m7[39m[7me[39m[7m:[39m[7ma[39m[7mf[39m[7m:[39m[7m5[39m[7m4[27m[17D[27m0[27m0[27m:[27m2[27m4[27m:[27md[27m7[27m:[27m7[27me[27m:[27ma[27mf[27m:[27m5[27m4[?1l>[?2004l
+]2;MAC=00:24:d7:7e:af:54 ]1;[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~/Desktop]1;~/Desktop[0m[27m[24m[J[01;35msc [01;32m➜  [36mDesktop[00m [K[?1h=[?2004h[7m[32mssh[39m[7m ldap grep -w $USER /var/log/radiusd | [7m[32mtail[39m[7m -2[27m[49D[27m[32ms[27m[32ms[27m[32mh[39m[27m [27ml[27md[27ma[27mp[27m [27mg[27mr[27me[27mp[27m [27m-[27mw[27m [27m$[27mU[27mS[27mE[27mR[27m [27m/[27mv[27ma[27mr[27m/[27ml[27mo[27mg[27m/[27mr[27ma[27md[27mi[27mu[27ms[27md[27m [27m|[27m [27m[32mt[27m[32ma[27m[32mi[27m[32ml[39m[27m [27m-[27m2[?1l>[?2004l
+]2;ssh ldap grep -w $USER /var/log/radiusd | tail -2]1;ldapMon May  6 17:07:22 2019 : Auth: (3078)   Login OK: [dabrowk1] (from client ap225 port 0 via TLS tunnel)
+Mon May  6 17:07:22 2019 : Auth: (3078) Login OK: [dabrowk1] (from client ap225 port 0 cli 00-24-D7-7D-BA-8C)
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~/Desktop]1;~/Desktop[0m[27m[24m[J[01;35msc [01;32m➜  [36mDesktop[00m [K[?1h=[?2004h[7m[32mssh[39m[7m ldap grep -w $MAC  /var/log/dhcpd | [7m[32mtail[39m[7m -3[27m[47D[27m[32ms[27m[32ms[27m[32mh[39m[27m [27ml[27md[27ma[27mp[27m [27mg[27mr[27me[27mp[27m [27m-[27mw[27m [27m$[27mM[27mA[27mC[27m [27m [27m/[27mv[27ma[27mr[27m/[27ml[27mo[27mg[27m/[27md[27mh[27mc[27mp[27md[27m [27m|[27m [27m[32mt[27m[32ma[27m[32mi[27m[32ml[39m[27m [27m-[27m3[?1l>[?2004l
+]2;ssh ldap grep -w $MAC /var/log/dhcpd | tail -3]1;ldap[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~/Desktop]1;~/Desktop[0m[27m[24m[J[01;35msc [01;32m➜  [36mDesktop[00m [K[?1h=[?2004h[7m[4m[32msudo[24m[39m[7m [7m[32mtail[39m[7m -15 /var/db/dhclient.leases.$WLAN[27m[43D[27m[4m[32ms[27m[4m[32mu[27m[4m[32md[27m[4m[32mo[24m[39m[27m [27m[32mt[27m[32ma[27m[32mi[27m[32ml[39m[27m [27m-[27m1[27m5[27m [27m/[27mv[27ma[27mr[27m/[27md[27mb[27m/[27md[27mh[27mc[27ml[27mi[27me[27mn[27mt[27m.[27ml[27me[27ma[27ms[27me[27ms[27m.[27m$[27mW[27mL[27mA[27mN[?1l>[?2004l
+]2;sudo tail -15 /var/db/dhclient.leases.$WLAN]1;tailtail: cannot open '/var/db/dhclient.leases.wlp3s0' for reading: No such file or directory
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~/Desktop]1;~/Desktop[0m[27m[24m[J[01;35msc [01;31m➜  [36mDesktop[00m [K[?1h=[?2004h[H[2J[0m[27m[24m[J[01;35msc [01;31m➜  [36mDesktop[00m [K[1m[31mE[0m[39m[1m[31mE[1m[31mc[0m[39m[1m[31mE[0m[39m[0m[39m [0m[39m [1m[31me[0m[39m[90mcho "Teraz jet podlaczenie przez GUI do pw.edu.pl"[39m[50D[1m[31me[1m[31mc[0m[39m[1m[31me[1m[31mc[1m[31mh[0m[39m[0m[32me[0m[32mc[0m[32mh

@@ -1,0 +1,614 @@
+Script started on pon, 6 maj 2019, 17:06:18
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[1m[31mi[0m[39m[90mnstall_vb[39m[9D[0m[32mi[32mp[39m[90m [90ma[39m[39m [39m [39m [39m [39m [39m [8D[39m [39ma[?1l>[?2004l
+]2;ip a]1;ip1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eno2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether e8:40:f2:ec:5e:43 brd ff:ff:ff:ff:ff:ff
+    inet 10.146.225.3/16 brd 10.146.255.255 scope global eno2
+       valid_lft forever preferred_lft forever
+    inet6 fe80::ea40:f2ff:feec:5e43/64 scope link 
+       valid_lft forever preferred_lft forever
+3: eno1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether e8:40:f2:ec:5e:46 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::ea40:f2ff:feec:5e46/64 scope link 
+       valid_lft forever preferred_lft forever
+4: wlp2s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether 00:24:d7:7d:ba:8c brd ff:ff:ff:ff:ff:ff
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[1m[31mi[0m[39m[90mp a[39m[0m[32mi[32mp[39m[39m [39mr[90moute add -host 1.1.1.1 -interface wlp2s0[39m[40D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [40D[?1l>[?2004l
+]2;ip r]1;ipdefault via 10.146.146.5 dev eno2 
+10.146.0.0/16 dev eno2  proto kernel  scope link  src 10.146.225.3 
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[H[2J[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[32mip[39m ra[?1l>[?2004l
+]2;ip a]1;ip1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eno2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether e8:40:f2:ec:5e:43 brd ff:ff:ff:ff:ff:ff
+    inet 10.146.225.3/16 brd 10.146.255.255 scope global eno2
+       valid_lft forever preferred_lft forever
+    inet6 fe80::ea40:f2ff:feec:5e43/64 scope link 
+       valid_lft forever preferred_lft forever
+3: eno1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether e8:40:f2:ec:5e:46 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::ea40:f2ff:feec:5e46/64 scope link 
+       valid_lft forever preferred_lft forever
+4: wlp2s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:24:d7:7d:ba:8c brd ff:ff:ff:ff:ff:ff
+    inet 10.68.17.233/16 brd 10.68.255.255 scope global dynamic wlp2s0
+       valid_lft 3601sec preferred_lft 3601sec
+    inet6 fe80::224:d7ff:fe7d:ba8c/64 scope link 
+       valid_lft forever preferred_lft forever
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[32mip[39m ar[?1l>[?2004l
+]2;ip r]1;ipdefault via 10.146.146.5 dev eno2 
+default via 10.68.0.1 dev wlp2s0  proto static  metric 600 
+10.68.0.0/16 dev wlp2s0  proto kernel  scope link  src 10.68.17.233  metric 600 
+10.146.0.0/16 dev eno2  proto kernel  scope link  src 10.146.225.3 
+169.254.0.0/16 dev wlp2s0  scope link  metric 1000 
+192.0.2.4 via 10.68.0.1 dev wlp2s0  proto dhcp  metric 600 
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [1m[31me[0m[39m[90mcho "Niechcący zablokowałem zdalny dostęp do maszyny s1. Po wykonaniu d[90mh[90mclient -r przestała być dostępna." | mail -s "Przypadkowe zablokowanie s1" ato[39m[K[A[70D[1m[31me[1m[31mh[0m[39m[K[1B[K[A[10C[1m[31me[1m[31mh[1m[31mo[0m[39m[1m[31mo[1m[31mc[0m[39m [1m[31mo[0m[39m[0m[39m [1m[31me[1m[31mh[0m[39m[0m[39m [1m[31me[0m[39m[0m[90mc[90mho "Niechcący zablokowałem zdalny dostęp do maszyny s1. Po wykonaniu d[90mh[90mclient -r przestała być dostępna." | mail -s "Przypadkowe zablokowanie s1" ato[39m[K[A[70D[K[1B[K[A[8C[1m[31me[0m[39m[90mcho "Niechcący zablokowałem zdalny dostęp do maszyny s1. Po wykonaniu d[90mh[90mclient -r przestała być dostępna." | mail -s "Przypadkowe zablokowanie s1" ato[39m[K[A[70D[1m[31me[1m[31mc[0m[39m[1m[31me[1m[31mc[1m[31mh[0m[39m[0m[32me[0m[32mc[0m[32mh[32mo[39m[39m [33m"[39m[33m"[33m [39m[K[1B[K[A[15C[33m"[39m[90mN[90miechcący zablokowałem zdalny dostęp do maszyny s1. Po wykonaniu d[90mh[90mclient -r przestała być dostępna." | mail -s "Przypadkowe zablokowanie s1" ato[39m[K[A[65D[33m"[33mZ[39m[K[1B[K[A[15C[33mZ[33mm[39m[33mm[33mi[39m[33mi[33ma[39m[33ma[33mn[39m[33mn[33ma[39m[33ma[33m [39m[33m [33ms[39m[33ms[33mi[39m[33mi[33me[39m[33me[33mc[39m[33mc[33mi[39m[33mi[33m [39m[33m [33mn[39m[33mn[33ma[39m[33ma[33m [39m[33m [33mp[39m[33mp[33mw[39m[33mw[33m-[39m[33m-[33mw[39m[33mw[33mi[39m[33mi[33mf[39m[33mf[33mi[39m[33mi[33m-[39m[33m-[33ms[39m[33ms[33mu[39m[33mu[33md[39m[33md[33me[39m[33me[33mn[39m[33mn[33mt[39m[33mt[33ms[39m[33ms[33m"[39m[33m [33m"[39m[33m"[39m[39m [33m.[33m"[39m[33m [33m"[39m[33mW[33m"[39m[33mc[33m"[39m[33mz[33m"[39m[33me[33m"[39m[33mś[33m"[39m[33mn[33m"[39m[33mi[33m"[39m[33me[33m"[39m[33mj[33m"[39m[33m [33m"[39m[33mb[33m"[39m[33my[33m"[39m[33mł[33m"[39m[33mp[33m"[39m[33m"[39m[39m [33mo[33m"[39m[33m [33m"[39m[33mZ[33m"[39m[33mE[33m"[39m[33mT[33m"[39m[33mI[33m"[39m[33mS[33m"[39m[?1l>[?2004l[1B]2;echo "Zmiana sieci na pw-wifi-sudents. Wcześniej było ZETIS"]1;echoZmiana sieci na pw-wifi-sudents. Wcześniej było ZETIS
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[H[2J[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[1m[31mi[0m[39m[90mp r[39m[0m[32mi[32mp[39m[39m [39ma[?1l>[?2004l
+]2;ip a]1;ip1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eno2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether e8:40:f2:ec:5e:43 brd ff:ff:ff:ff:ff:ff
+    inet 10.146.225.3/16 brd 10.146.255.255 scope global eno2
+       valid_lft forever preferred_lft forever
+    inet6 fe80::ea40:f2ff:feec:5e43/64 scope link 
+       valid_lft forever preferred_lft forever
+3: eno1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether e8:40:f2:ec:5e:46 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::ea40:f2ff:feec:5e46/64 scope link 
+       valid_lft forever preferred_lft forever
+4: wlp2s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:24:d7:7d:ba:8c brd ff:ff:ff:ff:ff:ff
+    inet 10.68.17.233/16 brd 10.68.255.255 scope global dynamic wlp2s0
+       valid_lft 3532sec preferred_lft 3532sec
+    inet6 fe80::224:d7ff:fe7d:ba8c/64 scope link 
+       valid_lft forever preferred_lft forever
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[1m[31mi[0m[39m[90mp a[39m[0m[32mi[32mp[39m[39m [39mr[?1l>[?2004l
+]2;ip r]1;ipdefault via 10.146.146.5 dev eno2 
+default via 10.68.0.1 dev wlp2s0  proto static  metric 600 
+10.68.0.0/16 dev wlp2s0  proto kernel  scope link  src 10.68.17.233  metric 600 
+10.146.0.0/16 dev eno2  proto kernel  scope link  src 10.146.225.3 
+169.254.0.0/16 dev wlp2s0  scope link  metric 1000 
+192.0.2.4 via 10.68.0.1 dev wlp2s0  proto dhcp  metric 600 
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[H[2J[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[4mm[24m[90mv .config .config.old[39m[21D[24m[1m[31mm[1m[31mn[0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [20D[1m[31mm[1m[31mn[1m[31mc[0m[39m[1m[31mc[1m[31ml[0m[39m[1m[31ml[1m[31mi[0m[39m [1m[31ml[0m[39m[0m[39m [1m[31mc[0m[39m[0m[39m [1m[31mm[1m[31mn[0m[39m[0m[39m [0m[39m[4mm[24m[0m[90mv[90m .config .config.old[39m[21D[24m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [22D[1m[31mn[0m[39m[90mmcli device wifi list[39m[21D[0m[32mn[32mm[39m[32mn[32mm[32mc[32ml[32mi[39m[39m [39md[39me[39mv[39mi[39mc[39me[39m [39mw[39mi[39mf[39mi[39m [39ml[39mi[39ms[39mt[?1l>[?2004l
+]2;nmcli device wifi list]1;nmcli*  SSID                     MODE   CHAN  RATE       SIGNAL  BARS  SECURITY    
+   pwwifi                   Infra  11    54 Mbit/s  85      ▂▄▆█  --          
+   pwwifi2                  Infra  11    54 Mbit/s  77      ▂▄▆_  WPA2 802.1X 
+   ap-ge213                 Infra  1     54 Mbit/s  72      ▂▄▆_  WPA2        
+   eduroam                  Infra  1     54 Mbit/s  60      ▂▄▆_  WPA2 802.1X 
+   pw.edu.pl                Infra  1     54 Mbit/s  52      ▂▄__  WPA2 802.1X 
+   eduroam                  Infra  11    54 Mbit/s  89      ▂▄▆█  WPA2 802.1X 
+   pw.edu.pl                Infra  11    54 Mbit/s  85      ▂▄▆█  WPA2 802.1X 
+   konferencja              Infra  11    54 Mbit/s  25      ▂___  WEP         
+   --                       Infra  1     54 Mbit/s  62      ▂▄▆_  WPA2        
+   zakamarek                Infra  11    54 Mbit/s  64      ▂▄▆_  WPA1        
+   pw.edu.pl                Infra  1     54 Mbit/s  40      ▂▄__  WPA2 802.1X 
+   ZETIS                    Infra  36    54 Mbit/s  37      ▂▄__  WPA2 802.1X 
+   pwwifi-students          Infra  1     54 Mbit/s  56      ▂▄▆_  --          
+   ZETIS                    Infra  1     54 Mbit/s  64      ▂▄▆_  WPA2 802.1X 
+   OPTO_B                   Infra  3     54 Mbit/s  54      ▂▄__  WPA1 WPA2   
+   pwwifi2                  Infra  1     54 Mbit/s  60      ▂▄▆_  WPA2 802.1X 
+   GE116                    Infra  4     54 Mbit/s  50      ▂▄__  WPA1 WPA2   
+   konferencja              Infra  1     54 Mbit/s  57      ▂▄▆_  WEP         
+*  pwwifi-students          Infra  11    54 Mbit/s  74      ▂▄▆_  --          
+   ZNELAB                   Infra  9     54 Mbit/s  44      ▂▄__  WPA1        
+   pwwifi2                  Infra  48    54 Mbit/s  34      ▂▄__  WPA2 802.1X 
+   eduroam                  Infra  1     54 Mbit/s  40      ▂▄__  WPA2 802.1X 
+   pw.edu.pl                Infra  11    54 Mbit/s  39      ▂▄__  WPA2 802.1X 
+   pwwifi2                  Infra  11    54 Mbit/s  39      ▂▄__  WPA2 802.1X 
+   konferencja              Infra  48    54 Mbit/s  34      ▂▄__  WEP         
+   konferencja              Infra  11    54 Mbit/s  37      ▂▄__  WEP         
+   BMP Research Group 2.4G  Infra  1     54 Mbit/s  32      ▂▄__  WPA2        
+   pwwifi2                  Infra  1     54 Mbit/s  30      ▂___  WPA2 802.1X 
+   pwwifi-students          Infra  48    54 Mbit/s  35      ▂▄__  --          
+   pwwifi                   Infra  6     54 Mbit/s  35      ▂▄__  --          
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[H[2J[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [1m[31ms[0m[39m[90mcript historiaC4L1[39m[18D[0m[32ms[32mu[39m[90md[90mo[90m [90ms[90my[90ms[90mt[90me[90mm[90mc[90mt[90ml[90m [90mr[90me[90ms[90mt[90mart lightdm.service[39m[36D[1m[31ms[0m[39m[90mc[90mr[90mi[90mp[90mt[90m [90mh[90mi[90ms[90mt[90mo[90mr[90mi[90ma[90mC[90m4[90mL[90m1[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [37D[1m[31ms[1m[31my[0m[39m[90ms[90mt[90me[90mm[90mc[90mt[90ml[90m [90mr[90me[90ms[90mt[90ma[90mr[90mt[90m [90ml[90mightdm.service[39m[31D[1m[31ms[1m[31my[1m[31ms[0m[39m[1m[31ms[1m[31mt[0m[39m[1m[31mt[1m[31me[0m[39m[1m[31me[1m[31mm[0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [26D[90mc[90mtl restart lightdm.service[39m[27D[1m[31mm[1m[31mc[0m[39m[1m[31mc[1m[31ml[0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [25D[1m[31ml[1m[31mt[0m[39m[1m[31ml[0m[39m[0m[39m [1m[31mc[0m[39m[0m[90mt[90ml restart lightdm.service[39m[26D[1m[31mm[0m[39m[0m[90mc[1m[31me[0m[39m[0m[90mm[1m[31mt[0m[39m[0m[90me[1m[31ms[0m[39m[0m[90mt[1m[31ms[1m[31my[0m[39m[0m[90ms[1m[31ms[0m[39m[0m[90mc[90mr[90mi[90mp[90mt[90m [90mh[90mi[90ms[90mt[90mo[90mr[90mi[90ma[90mC[90m4[90mL[90m1[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [32D[0m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [19D[1m[31mn[0m[39m[90mmcli device wifi list[39m[21D[0m[32mn[32mm[39m[32mn[32mm[32mc[32ml[32mi[39m[39m [39md[39me[39mv[39mi[39mc[39me[39m [39mw[39mi[39mf[39mi[39m [39ml[39mi[39ms[39mt[90mt[39m[90ms[39m[4ml[24m[90mi[24m[90ml[90m [90mi[90mf[90mi[90mw[90m [90me[90mc[90mi[90mv[90me[90md[39m[39ms[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [15Dtati us[?1l>[?2004l
+]2;nmcli status]1;nmcliError: Object 'status' is unknown, try 'nmcli help'.
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;31m➜  [36m~[00m [K[?1h=[?2004h[32mnmcli[39m status[1C status[1m[31mn[1m[31mm[1m[31mc[1m[31ml[1m[31mi[1m[31mg[0m[39m  status[8D[0m[32mn[0m[32mm[0m[32mc[0m[32ml[0m[32mi[39m[0m[39m  status [9D[2C status[8Dg  status[8De  status[8Dm  status[8D  status [9Dn  status[8De  status[8Dr  status[8Da  status[8Dl  status[8D[1C[1C[1C[1C[1C[1C[1C[1C     [16D[39mn[39mm[39mc[39ml[39mi[11C[16D[32mn[32mm[32mc[32ml[32mi[39m[10C       [90ms[90mtatus[39m[39mg[39m [39m [39m [39m [39m e[8D[39mn[39mm[39mc[39ml[39mi[3C[8D[32mn[32mm[32mc[32ml[32mi[39m[2C [90ms[90mtatus[39m
+[0mcon  -- NetworkManager connections
+dev  -- devices managed by NetworkManager
+[Jnm   -- NetworkManager status[J[3A[0m[27m[24m[8C[32mnmcli[39m [90mstatus[39m[K[39mc[39mo[39mn[39m [39m [39m 
+[7mcon  -- NetworkManager connections[K[0m[K
+dev  -- devices managed by NetworkManager[K[K
+[Jnm   -- NetworkManager status[K[J[3A[0m[27m[24m[8C[32mnmcli[39m con[K
+[7mcon  -- NetworkManager connections[K[0m[7mcon  -- NetworkManager connections[K[0m[A[0m[27m[24m[8C[32mnmcli[39m con[Kdev
+[0mcon  -- NetworkManager connections[K[1B[7mdev  -- devices managed by NetworkManager[K[0m[A[A[0m[27m[24m[8C[32mnmcli[39m dev[Knm 
+[1B[0mdev  -- devices managed by NetworkManager[K[1B[7mnm   -- NetworkManager status[K[0m[3A[0m[27m[24m[8C[32mnmcli[39m nm[K
+[J[A[16C[1m [0m[0m 
+[J[0menable  -- get status or enable/disable networking
+sleep   -- get sleep status or put to sleep/awake NetworkManager
+status  -- show overall status of NetworkManager
+wifi    -- inquire or set status of WiFi in NetworkManager
+[Jwwan    -- inquire or set status of WWAN in NetworkManager[J[5A[0m[27m[24m[8C[32mnmcli[39m nm[K[1Cenable
+[7menable  -- get status or enable/disable networking[K[0m[K
+sleep   -- get sleep status or put to sleep/awake NetworkManager[K[K
+status  -- show overall status of NetworkManager[K[K
+wifi    -- inquire or set status of WiFi in NetworkManager[K[K
+[Jwwan    -- inquire or set status of WWAN in NetworkManager[K[J[5A[0m[27m[24m[8C[32mnmcli[39m nm enable[K
+[7menable  -- get status or enable/disable networking[K[0m[7menable  -- get status or enable/disable networking[K[0m[A[0m[27m[24m[8C[32mnmcli[39m nm enable[Ksleep 
+[0menable  -- get status or enable/disable networking[K[1B[7msleep   -- get sleep status or put to sleep/awake NetworkManager[K[0m[A[A[0m[27m[24m[8C[32mnmcli[39m nm sleep[Ktatus
+[1B[0msleep   -- get sleep status or put to sleep/awake NetworkManager[K[1B[7mstatus  -- show overall status of NetworkManager[K[0m[3A[0m[27m[24m[8C[32mnmcli[39m nm status[K
+[J[A[23C[1m [0m[0m [?1l>[?2004l
+[J]2;nmcli nm status]1;nmcliError: Object 'nm' is unknown, try 'nmcli help'.
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;31m➜  [36m~[00m [K[?1h=[?2004h[32mnmcli[39m nm status[90ms[39m[90mu[90mt[90ma[90mt[90ms[39m
+[0menable  -- get status or enable/disable networking
+sleep   -- get sleep status or put to sleep/awake NetworkManager
+status  -- show overall status of NetworkManager
+wifi    -- inquire or set status of WiFi in NetworkManager
+[Jwwan    -- inquire or set status of WWAN in NetworkManager[J[5A[0m[27m[24m[8C[32mnmcli[39m nm [90mstatus[39m[K[39me[39mn[39ma[39mb[39ml[39me
+[7menable  -- get status or enable/disable networking[K[0m[K
+sleep   -- get sleep status or put to sleep/awake NetworkManager[K[K
+status  -- show overall status of NetworkManager[K[K
+wifi    -- inquire or set status of WiFi in NetworkManager[K[K
+[Jwwan    -- inquire or set status of WWAN in NetworkManager[K[J[5A[0m[27m[24m[8C[32mnmcli[39m nm enable[K
+[7menable  -- get status or enable/disable networking[K[0m[7menable  -- get status or enable/disable networking[K[0m[A[0m[27m[24m[8C[32mnmcli[39m nm enable[K
+[J[A[23C[1m [0m[0m      [90ms[90mtatus[39m[90m [90mm[90mn[39m
+[J[0mcon  -- NetworkManager connections
+dev  -- devices managed by NetworkManager
+[Jnm   -- NetworkManager status[J[3A[0m[27m[24m[8C[32mnmcli[39m [90mnm status[39m[K[9D[39mc[39mo[39mn[39m [39m [39m [39m [39m [39m 
+[7mcon  -- NetworkManager connections[K[0m[K
+dev  -- devices managed by NetworkManager[K[K
+[Jnm   -- NetworkManager status[K[J[3A[0m[27m[24m[8C[32mnmcli[39m con[K
+[7mcon  -- NetworkManager connections[K[0m[7mcon  -- NetworkManager connections[K[0m[A[0m[27m[24m[8C[32mnmcli[39m con[Kdev
+[0mcon  -- NetworkManager connections[K[1B[7mdev  -- devices managed by NetworkManager[K[0m[A[A[0m[27m[24m[8C[32mnmcli[39m dev[K
+[J[A[17C[1m [0m[0m 
+[J[0mdisconnect  -- disconnect device and prevent it from automatically activatin
+list        -- get detailed information about devices
+status      -- print status of devices
+[Jwifi        -- list available WiFi access points[J[4A[0m[27m[24m[8C[32mnmcli[39m dev[K[1Cdisconnect
+[7mdisconnect  -- disconnect device and prevent it from automatically activatin[K[0m[K
+list        -- get detailed information about devices[K[K
+status      -- print status of devices[K[K
+[Jwifi        -- list available WiFi access points[K[J[4A[0m[27m[24m[8C[32mnmcli[39m dev disconnect[K
+[7mdisconnect  -- disconnect device and prevent it from automatically activatin[K[0m[7mdisconnect  -- disconnect device and prevent it from automatically activatin[K[0m[A[0m[27m[24m[8C[32mnmcli[39m dev disconnect[K[10Dl[2Ct      
+[0mdisconnect  -- disconnect device and prevent it from automatically activatin[K[1B[7mlist        -- get detailed information about devices[K[0m[A[A[0m[27m[24m[8C[32mnmcli[39m dev list[K
+[J[A[22C[1m [0m[0m [?1l>[?2004l
+[J]2;nmcli dev list]1;nmcliUsage: nmcli device { COMMAND | help }
+
+COMMAND := { status | show | connect | disconnect | delete | wifi }
+
+  status
+
+  show [<ifname>]
+
+  connect <ifname>
+
+  disconnect <ifname> ...
+
+  delete <ifname> ...
+
+  wifi [list [ifname <ifname>] [bssid <BSSID>]]
+
+  wifi connect <(B)SSID> [password <password>] [wep-key-type key|phrase] [ifname <ifname>]
+                         [bssid <BSSID>] [name <name>] [private yes|no]
+
+  wifi rescan [[ifname] <ifname>]
+
+Error: 'dev' command 'list' is not valid.
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;31m➜  [36m~[00m [K[?1h=[?2004h[32mnmcli[39m dev list iface[1m [0m[0m 
+[J[0meno1    [Jeno2    [Jlo      [Jwlp2s0[J[A[0m[27m[24m[8C[32mnmcli[39m dev list iface[K[1C     show[?1l>[?2004l
+[J]2;nmcli dev list show]1;nmcliUsage: nmcli device { COMMAND | help }
+
+COMMAND := { status | show | connect | disconnect | delete | wifi }
+
+  status
+
+  show [<ifname>]
+
+  connect <ifname>
+
+  disconnect <ifname> ...
+
+  delete <ifname> ...
+
+  wifi [list [ifname <ifname>] [bssid <BSSID>]]
+
+  wifi connect <(B)SSID> [password <password>] [wep-key-type key|phrase] [ifname <ifname>]
+                         [bssid <BSSID>] [name <name>] [private yes|no]
+
+  wifi rescan [[ifname] <ifname>]
+
+Error: 'dev' command 'list' is not valid.
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;31m➜  [36m~[00m [K[?1h=[?2004h[32mnmcli[39m dev list show[1C[90mw[39m[90mo[90mh[90ms[90m [90mt[90ms[39m[4ml[24m[90mi[24m[90ml[90m [90mv[90me[90md[90m [39m[39m[1m [0m[0m 
+[0mcon  -- NetworkManager connections
+dev  -- devices managed by NetworkManager
+[Jnm   -- NetworkManager status[J[3A[0m[27m[24m[8C[32mnmcli[39m [90mdev list show[39m[K[13D[90m [1m[31mn[1m[31mm[1m[31mc[1m[31ml[1m[31mi[1m[31m-[0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [13D
+[J[A[14C[0m[39mn[0m[39mm[0m[39mc[0m[39ml[0m[39mi[0m[39m-[32mn[32mm[32mc[32ml[32mi[39m[90m [90mdev list show[39m[14D[1m[31mn[1m[31mm[1m[31mc[1m[31ml[1m[31mi[1m[31m-[0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [13D[1m[31m-[1m[31me[0m[39m[1m[31me[1m[31mx[0m[39m[1m[31mx[1m[31ma[0m[39m[1m[31ma[1m[31mm[0m[39m[1m[31mm[1m[31mp[0m[39m[1m[31mp[1m[31ml[0m[39m[1m[31ml[1m[31me[0m[39m[1m[31me[1m[31ms[0m[39m[1m[31me[0m[39m[0m[39m [1m[31ml[0m[39m[0m[39m [1m[31mp[0m[39m[0m[39m [1m[31mm[0m[39m[0m[39m [1m[31ma[0m[39m[0m[39m [1m[31mx[0m[39m[0m[39m [1m[31me[0m[39m[0m[39m [1m[31m-[0m[39m[0m[39m [0m[32mn[0m[32mm[0m[32mc[0m[32ml[0m[32mi[39m[0m[90m [90mdev list show[39m[14D[1m[31mn[1m[31mm[1m[31mc[1m[31ml[0m[39m[90mi[1m[31mc[0m[39m[0m[90ml[0m[32mn[0m[32mm[39m[0m[90mc[1m[31mn[0m[39m[90mm[0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [19D[1m[7m[31m^?[0m[27m[39m[0m[27m[39m [0m[27m[39m [7m[32mnmcli[39m[7m networking [27m[17D[27m[32mn[27m[32mm[27m[32mc[27m[32ml[27m[32mi[39m[27m [27mn[27me[27mt[27mw[27mo[27mr[27mk[27mi[27mn[27mg[27m  off[?1l>[?2004l
+[J]2;nmcli networking off]1;nmcli[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[1m[31me[0m[39m[90mcho "Zmiana sieci na pw-wifi-sudents. Wcześniej było ZETIS"[39m[59D[1m[31me[1m[31mc[0m[39m[1m[31me[1m[31mc[1m[31mh[0m[39m[0m[32me[0m[32mc[0m[32mh[32mo[39m[39m [39m:[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [54DWy  [90m"[90mZmiana sieci na pw-wifi-sudents. Wcześniej było ZETIS"[39m[55D[33m"[39m[33m"[33mW[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [53D[33mW[33my[39m[33my[33mł[39m[33mł[33mą[39m[33mą[33mc[39m[33mc[33mz[39m[33mz[33me[39m[33me[33mn[39m[33mn[33mi[39m[33mi[33me[39m[33me[33m [39m[33m [33mn[39m[33mn[33me[39m[33me[33mt[39m[33mt[33mw[39m[33mw[33mo[39m[33mo[33mr[39m[33mr[33mk[39m[33mk[33m [39m[33m [33mm[39m[33mm[33ma[39m[33ma[33mn[39m[33mn[33ma[39m[33ma[33mg[39m[33mg[33me[39m[33me[33mr[39m[33mr[33ma[39m[33ma[33m"[39m[?1l>[?2004l
+]2;echo "Wyłączenie network managera"]1;echoWyłączenie network managera
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[H[2J[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[1m[31mi[0m[39m[90mp r[39m[0m[32mi[32mp[39m[39m [39ma[?1l>[?2004l
+]2;ip a]1;ip1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eno2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether e8:40:f2:ec:5e:43 brd ff:ff:ff:ff:ff:ff
+    inet 10.146.225.3/16 brd 10.146.255.255 scope global eno2
+       valid_lft forever preferred_lft forever
+    inet6 fe80::ea40:f2ff:feec:5e43/64 scope link 
+       valid_lft forever preferred_lft forever
+3: eno1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether e8:40:f2:ec:5e:46 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::ea40:f2ff:feec:5e46/64 scope link 
+       valid_lft forever preferred_lft forever
+4: wlp2s0: <BROADCAST,MULTICAST> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether 00:24:d7:7d:ba:8c brd ff:ff:ff:ff:ff:ff
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[1m[31mi[0m[39m[90mp a[39m[0m[32mi[32mw[39m[90ml[90mi[90mst scanning[39m[13D[1m[31mi[1m[31mw[1m[31ml[0m[39m[1m[31ml[1m[31mi[0m[39m[1m[31ml[0m[39m[0m[90mi[0m[32mi[0m[32mw[0m[32ml[32mi[32ms[32mt[39m[39m [39ms[39mc[39ma[39mn[39mn[39mi[39mn[39mg[?1l>[?2004l
+]2;iwlist scanning]1;iwlistwlp2s0    Failed to read scan data : Network is down
+
+eno1      Interface doesn't support scanning.
+
+lo        Interface doesn't support scanning.
+
+eno2      Interface doesn't support scanning.
+
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[1m[31mi[0m[39m[90mwlist scanning[39m[14D[0m[32mi[32mp[39m[90m [90ma[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [13D[1m[31mi[0m[39m[90mw[90ml[90mi[90mst scanning[39m[14D[0m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [15D[7m[32mip[39m[7m link set dev eth0 up[27m[23D[27m[32mi[27m[32mp[39m[27m [27ml[27mi[27mn[27mk[27m [27ms[27me[27mt[27m [27md[27me[27mv[27m [27me[27mt[27mh[27m0[27m [27mu[27mp up  up  up  up w upl upp up2 ups up0[1m [0m up[0m up [?1l>[?2004l
+]2;ip link set dev wlp2s0 up]1;ipRTNETLINK answers: Operation not permitted
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;31m➜  [36m~[00m [K[?1h=[?2004h[1m[31ms[0m[39m[90mcript historiaC4L1[39m[18D[0m[32ms[32mu[39m[90md[90mo[90m [90ms[90my[90ms[90mt[90me[90mm[90mc[90mt[90ml[90m [90mr[90me[90ms[90mt[90mart lightdm.service[39m[36D[1m[31ms[1m[31mu[1m[31md[0m[39m[0m[4m[32ms[0m[4m[32mu[0m[4m[32md[4m[32mo[24m[39m[39m [1m[31m![0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [32D[0m[34m![34m![39m[?1l>[?2004l
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;31m➜  [36m~[00m sudo ip link set dev wlp2s0 up[K[?1h=[?2004h[30D[4m[32ms[4m[32mu[4m[32md[4m[32mo[24m[39m [32mi[32mp[39m[23C[?1l>[?2004l
+]2;sudo ip link set dev wlp2s0 up]1;ip[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[H[2J[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[4m[32msudo[24m[39m [32mip[39m link set dev wlp2s0 up[30D[5P[25C     [25D[32mi[32mw[32ml[32mi[32ms[32mt[39m scanning          [10D[?1l>[?2004l
+]2;iwlist scanning]1;iwlistwlp2s0    No scan results
+
+eno1      Interface doesn't support scanning.
+
+lo        Interface doesn't support scanning.
+
+eno2      Interface doesn't support scanning.
+
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[1m[31ms[0m[39m[90mudo ip link set dev wlp2s0 up[39m[29D[0m[32ms[32mu[39m[1m[31ms[1m[31mu[1m[31md[0m[39m[0m[4m[32ms[0m[4m[32mu[0m[4m[32md[4m[32mo[24m[39m[39m [32mw[39m[90mp[90ma[90m_[90mc[90ml[90mi[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [24D[1m[31mw[1m[31mp[0m[39m[1m[31mp[1m[31ma[0m[39m[1m[31ma[1m[31m_[0m[39m[0m[39mw[0m[39mp[0m[39ma[0m[39m_
+[J[0mwpa_action      [Jwpa_cli         [Jwpa_passphrase  [Jwpa_supplicant[J[A[0m[27m[24m[8C[4m[32msudo[24m[39m wpa_[90mcli[39m[K[39ma[39mc[39mtion
+[J[7mwpa_action    [0m  [Jwpa_cli         [Jwpa_passphrase  [Jwpa_supplicant[J[A[0m[27m[24m[8C[4m[32msudo[24m[39m wpa_action[K
+[7mwpa_action    [0m  [7mwpa_action    [0m  [A[0m[27m[24m[8C[4m[32msudo[24m[39m wpa_action[Kcli   
+[16C[7mwpa_cli       [0m  wpa_action      [A[0m[27m[24m[8C[4m[32msudo[24m[39m wpa_cli[K
+[J[A[20C[1m [0m[8D[32mw[32mp[32ma[32m_[32mc[32ml[32mi[39m[1C[0m [?1l>[?2004l
+[J]2;sudo wpa_cli]1;wpa_cliwpa_cli v2.4
+Copyright (c) 2004-2015, Jouni Malinen <j@w1.fi> and contributors
+
+This software may be distributed under the terms of the BSD license.
+See README for more details.
+
+
+
+Interactive mode
+
+Could not connect to wpa_supplicant: (nil) - re-trying
+^C[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[32mw[39m[1m[31mw[1m[31mp[0m[39m[90ma_cli[39m[1m[31mw[1m[31mp[1m[31ma[0m[39m[1m[31ma[1m[31m+[0m[39m[39m [39m [39m [1m[31ma[0m[39m[0m[90m_[90mcli[39m[1m[31m)[0m[39m[39m [39m [39m [0m[90m_[90mcli[39m[1m[31ma[1m[31m_[0m[39m[1m[31m_[1m[31mc[0m[39m[1m[31m_[0m[39m[0m[90mc[1m[31m_[1m[31ms[0m[39m[90mu[90mp[90mplicant -B -iwlp2s0 -c /etc/wpa_supplicant/wpa_supplicant.conf[39m[64D[1m[31ms[1m[31mu[0m[39m[0m[32mw[0m[32mp[0m[32ma[0m[32m_[0m[32ms[0m[32mu[32mp[32mp[32ml[32mi[32mc[32ma[32mn[32mt[39m[39m[1m [0m[0m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [55D[?1l>[?2004l
+]2;wpa_supplicant]1;wpa_supplicantSuccessfully initialized wpa_supplicant
+wpa_supplicant v2.4
+Copyright (c) 2003-2015, Jouni Malinen <j@w1.fi> and contributors
+
+This software may be distributed under the terms of the BSD license.
+See README for more details.
+
+This product includes software developed by the OpenSSL Project
+for use in the OpenSSL Toolkit (http://www.openssl.org/)
+
+usage:
+  wpa_supplicant [-BddhKLqqstuvW] [-P<pid file>] [-g<global ctrl>] \
+        [-G<group>] \
+        -i<ifname> -c<config file> [-C<ctrl>] [-D<driver>] [-p<driver_param>] \
+        [-b<br_ifname>] [-e<entropy file>] [-f<debug file>] \
+        [-o<override driver>] [-O<override ctrl>] \
+        [-N -i<ifname> -c<conf> [-C<ctrl>] [-D<driver>] \
+        [-m<P2P Device config file>] \
+        [-p<driver_param>] [-b<br_ifname>] [-I<config file>] ...]
+
+drivers:
+  nl80211 = Linux nl80211/cfg80211
+  wext = Linux wireless extensions (generic)
+  wired = Wired Ethernet driver
+  none = no driver (RADIUS server/WPS ER)
+options:
+  -b = optional bridge interface name
+  -B = run daemon in the background
+  -c = Configuration file
+  -C = ctrl_interface parameter (only used if -c is not)
+  -i = interface name
+  -I = additional configuration file
+  -d = increase debugging verbosity (-dd even more)
+  -D = driver name (can be multiple drivers: nl80211,wext)
+  -e = entropy file
+  -f = log output to debug file instead of stdout
+  -g = global ctrl_interface
+  -G = global ctrl_interface group
+  -K = include keys (passwords, etc.) in debug output
+  -s = log output to syslog instead of stdout
+  -T = record to Linux tracing in addition to logging
+       (records all messages regardless of debug verbosity)
+  -t = include timestamp in debug messages
+  -h = show this help text
+  -L = show license (BSD)
+  -o = override driver parameter for new interfaces
+  -O = override ctrl_interface parameter for new interfaces
+  -p = driver parameters
+  -P = PID file
+  -q = decrease debugging verbosity (-qq even less)
+  -u = enable DBus control interface
+  -v = show version
+  -W = wait for a control interface monitor before starting
+  -m = Configuration file for the P2P Device interface
+  -N = start describing new interface
+example:
+  wpa_supplicant -Dnl80211 -iwlan0 -c/etc/wpa_supplicant.conf
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;31m➜  [36m~[00m [K[?1h=[?2004h[H[2J[0m[27m[24m[J[01;35ms3 [01;31m➜  [36m~[00m [K[1m[31mv[0m[39m[90mim $histfile[39m[12D[0m[32mv[32mi[39m[32mv[32mi[32mm[39m[39m [39m[7m/[39m[7me[39m[7mt[39m[7mc[39m[7m/[39m[7mw[39m[7mp[39m[7ma[39m[7m_[7msupplicant/wpa_supplicant.conf[27m[39D[27m/[27me[27mt[27mc[27m/[27mw[27mp[27ma[27m_[27ms[27mu[27mp[27mp[27ml[27mi[27mc[27ma[27mn[27mt[27m/[27mw[27mp[27ma[27m_[27ms[27mu[27mp[27mp[27ml[27mi[27mc[27ma[27mn[27mt[27m.[27mc[27mo[27mn[27mf[?1l>[?2004l
+]2;vim /etc/wpa_supplicant/wpa_supplicant.conf]1;vim[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;28r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[28;1H"/etc/wpa_supplicant/wpa_supplicant.conf" [New File][>c[27m[23m[m[H[2J[2;1H[94m~                                                                               [3;1H~                                                                               [4;1H~                                                                               [5;1H~                                                                               [6;1H~                                                                               [7;1H~                                                                               [8;1H~                                                                               [9;1H~                                                                               [10;1H~                                                                               [11;1H~                                                                               [12;1H~                                                                               [13;1H~                                                                               [14;1H~                                                                               [15;1H~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [24;1H~                                                                               [25;1H~                                                                               [26;1H~                                                                               [27;1H~                                                                               [m[28;63H0,0-1[9CAll"/etc/wpa_supplicant/wpa_supplicant.conf" [New File][10C     [9C   [1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[28;1H[1m-- INSERT --[m[28;13H[K[28;63H0,1[11CAll[1;1H[?12l[?25h[?25lctrl_interface=/run/wpa_supplicant
+update_config=1[2;16H[K[28;63H2,16[2;16H[?12l[?25h[28;1H[K[2;15H[?25l[28;63H2,15[10CAll[2;15H[?12l[?25h[?25l[28;63H[K[28;1H:[?12l[?25h [?25l[61C2,15[10CAll[2;15H[?12l[?25h[?25l[28;1H"/etc/wpa_supplicant/wpa_supplicant.conf"[28;63H[K[28;1H
+[97m[41m"/etc/wpa_supplicant/wpa_supplicant.conf" E212: Can't open file for writing[m
+[38;5;121mPress ENTER or type command to continue[?12l[?25h[m[1;1H[2L[?25l[1;1Hctrl_interface=/run/wpa_supplicant
+update_config=1[28;1H[K[28;63H2,15[10CAll[2;15H[?12l[?25h[?25l[28;63H1[1;15H[?12l[?25h[?25l[28;63H[K[28;1H:[?12l[?25hq[?25l[?12l[?25h![?25l[?12l[?25h[?25l[28;1H[K[28;1H[?1l>[?12l[?25h[?1049l[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[1m[31ms[0m[39m[90mudo wpa_cli[39m[11D[0m[32ms[32mu[39m[1m[31ms[1m[31mu[1m[31md[0m[39m[0m[4m[32ms[0m[4m[32mu[0m[4m[32md[4m[32mo[24m[39m[39m [1m[31m![0m[39m[39m [39m [39m [39m [39m [39m [0m[34m![34m![39m[?1l>[?2004l
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m sudo vim /etc/wpa_supplicant/wpa_supplicant.conf[K[?1h=[?2004h[48D[4m[32ms[4m[32mu[4m[32md[4m[32mo[24m[39m [32mv[32mi[32mm[39m[40C[?1l>[?2004l
+]2;sudo vim /etc/wpa_supplicant/wpa_supplicant.conf]1;vim[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;28r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[28;1H"/etc/wpa_supplicant/wpa_supplicant.conf" [New File][>c[2;1H[94m~                                                                               [3;1H~                                                                               [4;1H~                                                                               [5;1H~                                                                               [6;1H~                                                                               [7;1H~                                                                               [8;1H~                                                                               [9;1H~                                                                               [10;1H~                                                                               [11;1H~                                                                               [12;1H~                                                                               [13;1H~                                                                               [14;1H~                                                                               [15;1H~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [24;1H~                                                                               [25;1H~                                                                               [26;1H~                                                                               [27;1H~                                                                               [m[28;63H0,0-1[9CAll[1;1H[?12l[?25h[27m[23m[m[H[2J[?25l[2;1H[94m~                                                                               [3;1H~                                                                               [4;1H~                                                                               [5;1H~                                                                               [6;1H~                                                                               [7;1H~                                                                               [8;1H~                                                                               [9;1H~                                                                               [10;1H~                                                                               [11;1H~                                                                               [12;1H~                                                                               [13;1H~                                                                               [14;1H~                                                                               [15;1H~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [24;1H~                                                                               [25;1H~                                                                               [26;1H~                                                                               [27;1H~                                                                               [m[28;63H0,0-1[9CAll"/etc/wpa_supplicant/wpa_supplicant.conf" [New File][1;1HP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?12l[?25h[?25l[28;1H[1m-- INSERT --[m[28;13H[K[28;63H0,1[11CAll[1;1H[?12l[?25h[?25lctrl_interface=/run/wpa_supplicant
+update_config=1[2;16H[K[28;63H2,16[2;16H[?12l[?25h[28;1H[K[2;15H[?25l[28;63H2,15[10CAll[2;15H[?12l[?25h[?25l[28;1H"/etc/wpa_supplicant/wpa_supplicant.conf"[28;63H[K[28;1H<tc/wpa_supplicant/wpa_supplicant.conf" [New] 2L, 51C written
+[?1l>[?12l[?25h[?1049l[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[7m[32mwpa_supplicant[39m[7m -B -i interface -c [7m[4m/etc/wpa_supplicant/wpa_supplicant.con[7m[4mf[27m[24m[K[A[7C[27m[32mw[27m[32mp[27m[32ma[27m[32m_[27m[32ms[27m[32mu[27m[32mp[27m[32mp[27m[32ml[27m[32mi[27m[32mc[27m[32ma[27m[32mn[27m[32mt[39m[27m [27m-[27mB[27m [27m-[27mi[27m [27mi[27mn[27mt[27me[27mr[27mf[27ma[27mc[27me[27m [27m-[27mc[27m [27m[4m/[27m[4me[27m[4mt[27m[4mc[27m[4m/[27m[4mw[27m[4mp[27m[4ma[27m[4m_[27m[4ms[27m[4mu[27m[4mp[27m[4mp[27m[4ml[27m[4mi[27m[4mc[27m[4ma[27m[4mn[27m[4mt[27m[4m/[27m[4mw[27m[4mp[27m[4ma[27m[4m_[27m[4ms[27m[4mu[27m[4mp[27m[4mp[27m[4ml[27m[4mi[27m[4mc[27m[4ma[27m[4mn[27m[4mt[27m[4m.[27m[4mc[27m[4mo[27m[4mn[4mf[24m[A[79C[1C[1C[P[42C[4mf[24m [K[A[36C[P[43C[K[1B[K[A[36C[P[43C [44D[P[43C [44D[P[43C [44D[P[43C [44D[P[43C [44D[P[43C [44D[P[43C [44Dw -c[24m [4m/[4me[4mt[4mc[24m[14P[15C[4m/[4mw[4mp[4ma[4m_[4msupplicant.conf[24m[43Dl -c[24m [4m/[4me[4mt[4mc[24m[14P[15C[4m/[4mw[4mp[4ma[4m_[4msupplicant.conf[24m[43Dp -c[24m [4m/[4me[4mt[4mc[24m[14P[15C[4m/[4mw[4mp[4ma[4m_[4msupplicant.conf[24m[43D[24D[39mw[39mp[39ma[39m_[39ms[39mu[39mp[39mp[39ml[39mi[39mc[39ma[39mn[39mt[14C[24m/[24me[24mt[24mc[24m/[24mw[24mp[24ma[24m_[24ms[24mu[24mp[24mp[24ml[24mi[24mc[24ma[24mn[24mt[24m/[24mw[24mp[24ma[24m_[24ms[24mu[24mp[24mp[24ml[24mi[24mc[24ma[24mn[24mt[24m.[24mc[24mo[24mn[24mf[43D[24D[32mw[32mp[32ma[32m_[32ms[32mu[32mp[32mp[32ml[32mi[32mc[32ma[32mn[32mt[39m[10C2 -c [4m/[4me[4mt[4mc[4m/[4mw[4mp[4ma[4m_[4ms[4mu[4mp[4mp[4ml[4mi[4mc[4ma[4mn[4mt[4m/[4mw[4mp[4ma[4m_[4ms[4mu[4mp[4mp[4ml[4mi[4mc[4ma[4mn[4mt[4m.[4mc[4mo[4mn[4mf[24m[43Ds -c[24m [4m/[4me[4mt[4mc[24m[14P[15C[4m/[4mw[4mp[4ma[4m_[4msupplicant.conf[24m[43D0 -c[24m [4m/[4me[4mt[4mc[24m[14P[15C[4m/[4mw[4mp[4ma[4m_[4msupplicant.conf[24m[43D[?1l>[?2004l[1B]2;wpa_supplicant -B -i wlp2s0 -c /etc/wpa_supplicant/wpa_supplicant.conf]1;wpa_supplicantSuccessfully initialized wpa_supplicant
+nl80211: deinit ifname=wlp2s0 disabled_11b_rates=0
+wlp2s0: Failed to initialize driver interface
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;31m➜  [36m~[00m [K[?1h=[?2004h[1m[31mi[0m[39m[90mwlist scanning[39m[14D[0m[32mi[32mp[39m[90m [90ml[90mi[90mn[90mk[90m [90ms[90me[90mt[90m [90md[90me[90mv[90m wlp2s0 up[39m[23D[39m [39ma[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [21D[?1l>[?2004l
+]2;ip a]1;ip1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eno2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether e8:40:f2:ec:5e:43 brd ff:ff:ff:ff:ff:ff
+    inet 10.146.225.3/16 brd 10.146.255.255 scope global eno2
+       valid_lft forever preferred_lft forever
+    inet6 fe80::ea40:f2ff:feec:5e43/64 scope link 
+       valid_lft forever preferred_lft forever
+3: eno1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether e8:40:f2:ec:5e:46 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::ea40:f2ff:feec:5e46/64 scope link 
+       valid_lft forever preferred_lft forever
+4: wlp2s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether 00:24:d7:7d:ba:8c brd ff:ff:ff:ff:ff:ff
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[32mip[39m a[32mw[32mp[32ma[32m_[32msupplicant[39m -B -i wlp2s0 -c [4m/etc/wpa_supplicant/wpa_supplicant.conf[24m[P[43C [44D[P[43C [44D[P[43C [44D[P[43C [44D[P[43C [44D[P[43C [44D[7mw[7ml[7mp[7m2[24m[7ms[24m[7m0[27m[24m [24m-[24mc[24m [4m/[4me[4mt[4mc[24m[9P[15C[4m/[4mw[4mp[4ma[4m_[4msupplicant.conf[24m[43D[27mw[27ml[27mp[27m2[27ms[27m0[?1l>[?2004l
+]2;wpa_supplicant -B -i wlp2s0 -c /etc/wpa_supplicant/wpa_supplicant.conf]1;wpa_supplicantSuccessfully initialized wpa_supplicant
+nl80211: deinit ifname=wlp2s0 disabled_11b_rates=0
+wlp2s0: Failed to initialize driver interface
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;31m➜  [36m~[00m [K[?1h=[?2004h[32mwpa_supplicant[39m -B -i wlp2s0 -c [4m/etc/wpa_supplicant/wpa_supplicant.conf[24m[70D[32mi[32mp[39m[39m [39ma[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m                  [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [66D[4m[32ms[4m[32mu[4m[32md[4m[32mo[24m[39m [32mvim[39m [4m/etc/wpa_supplicant/wpa_supplicant.conf[24m[48D[24m[32mi[24m[32mp[39m[24m[39m [24m[39ma [39m [39m [39m  [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [44D[32mw[32mp[32ma[32m_[32msupplicant[39m -B -i wlp2s0 -c [4m/etc/wpa_supplicant/wpa_supplicant.conf[24m[70D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m                  [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [70D[1m[31ms[0m[39m[90mudo vim /etc/wpa_supplicant/wpa_supplicant.conf[39m[47D[0m[32ms[32mu[39m[1m[31ms[1m[31mu[1m[31mp[0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [45D[0m[32ms[0m[32mu[39m[0m[90md[90mo vim /etc/wpa_supplicant/wpa_supplicant.conf[39m[46D[1m[31ms[1m[31mu[1m[31md[0m[39m[0m[4m[32ms[0m[4m[32mu[0m[4m[32md[4m[32mo[24m[39m[39m [32mw[39m[90mp[90ma[90m_[90mc[90ml[90mi[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [42D[1m[31mw[1m[31mp[0m[39m[1m[31mp[1m[31ma[0m[39m[0m[32mw[0m[32mp[0m[32ma[32m_[32mc[32ml[32mi[39m[?1l>[?2004l
+]2;sudo wpa_cli]1;wpa_cliwpa_cli v2.4
+Copyright (c) 2004-2015, Jouni Malinen <j@w1.fi> and contributors
+
+This software may be distributed under the terms of the BSD license.
+See README for more details.
+
+
+
+Interactive mode
+
+Could not connect to wpa_supplicant: (nil) - re-trying
+^C[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[4m[32msudo[24m[39m [32mwpa_cli[39m[24m[1m[31ms[24m[1m[31mu[24m[1m[31md[24m[1m[31mo[1m[31mw[1m[31mp[1m[31ma[1m[31m_[1m[31mc[1m[31ml[1m[31mi[0m[39m[39m [8D[1m[31mw[1m[31mp[1m[31ma[1m[31m_[1m[31mc[1m[31ml[1m[31mi[0m[39m[0m[39m [8D[1m[31mw[1m[31mp[1m[31ma[1m[31m_[1m[31mc[1m[31ml[1m[31mi[0m[39m[0m[39m [8D[1m[31ms[1m[31mw[1m[31mp[1m[31ma[1m[31m_[1m[31mc[1m[31ml[1m[31mi[0m[39m[0m[39m [8D[0m[32mw[0m[32mp[0m[32ma[0m[32m_[0m[32mc[0m[32ml[0m[32mi[39m[0m[39m [8D[?1l>[?2004l
+]2;wpa_cli]1;wpa_cliwpa_cli v2.4
+Copyright (c) 2004-2015, Jouni Malinen <j@w1.fi> and contributors
+
+This software may be distributed under the terms of the BSD license.
+See README for more details.
+
+
+
+Interactive mode
+
+Could not connect to wpa_supplicant: (nil) - re-trying
+^C[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[1m[31mi[0m[39m[90mp a[39m[0m[32mi[32mp[39m[39m [39m[4ml[24m[90mink set dev wlp2s0 up[39m[21D[24ml[39mi[39mn[39mk[39m [39ms[39me[39mt[39m [39md[39me[39mv[39m [39mw[39ml[39mp[39m2[39ms[39m0[39m [39mu[39mp[90mp[39m[90mu[39m[39md[39m own[?1l>[?2004l
+]2;ip link set dev wlp2s0 down]1;ipRTNETLINK answers: Operation not permitted
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;31m➜  [36m~[00m [K[?1h=[?2004h[1m[31ms[0m[39m[90mudo wpa_cli[39m[11D[0m[32ms[32mu[39m[1m[31ms[1m[31mu[1m[31md[0m[39m[0m[4m[32ms[0m[4m[32mu[0m[4m[32md[4m[32mo[24m[39m[39m [1m[31m![0m[39m[39m [39m [39m [39m [39m [39m [0m[34m![34m![39m[?1l>[?2004l
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;31m➜  [36m~[00m sudo ip link set dev wlp2s0 down[K[?1h=[?2004h[32D[4m[32ms[4m[32mu[4m[32md[4m[32mo[24m[39m [32mi[32mp[39m[25C[?1l>[?2004l
+]2;sudo ip link set dev wlp2s0 down]1;ip[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[H[2J[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[4m[32msudo[24m[39m [32mip[39m link set dev wlp2s0 down[32D[5P[27C     [27D[32mw[32mp[32ma[32m_[32mc[32ml[32mi[39m                    [20D[4m[32ms[4m[32mu[4m[32md[4m[32mo[24m[39m[39m [32mw[32mp[32ma_cli[39m[12D[24m[32mw[24m[32mp[24m[32ma[24m[32m_[32ms[32mu[32mp[32mp[32ml[32mi[32mc[32ma[32mnt[39m -B -i wlp2s0 -c [4m/etc/wpa_supplicant/wpa_supplicant.conf[24m[?1l>[?2004l
+]2;wpa_supplicant -B -i wlp2s0 -c /etc/wpa_supplicant/wpa_supplicant.conf]1;wpa_supplicantSuccessfully initialized wpa_supplicant
+Could not set interface wlp2s0 flags (UP): Operation not permitted
+nl80211: Could not set interface 'wlp2s0' UP
+nl80211: deinit ifname=wlp2s0 disabled_11b_rates=0
+wlp2s0: Failed to initialize driver interface
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;31m➜  [36m~[00m [K[?1h=[?2004h[1m[31ms[0m[39m[90mudo ip link set dev wlp2s0 down[39m[31D[0m[32ms[32mu[39m[1m[31ms[1m[31mu[1m[31md[0m[39m[0m[4m[32ms[0m[4m[32mu[0m[4m[32md[4m[32mo[24m[39m[39m [1m[31m![0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [26D[0m[34m![34m![39m[?1l>[?2004l
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;31m➜  [36m~[00m sudo wpa_supplicant -B -i wlp2s0 -c /etc/wpa_supplicant/wpa_supplicant.conf[K[?1h=[?2004h[A[5C[4m[32ms[4m[32mu[4m[32md[4m[32mo[24m[39m [32mw[32mp[32ma[32m_[32ms[32mu[32mp[32mp[32ml[32mi[32mc[32ma[32mn[32mt[39m[17C[4m/[4me[4mt[4mc[4m/[4mw[4mp[4ma[4m_[4ms[4mu[4mp[4mp[4ml[4mi[4mc[4ma[4mn[4mt[4m/[4mw[4mp[4ma[4m_[4ms[4mu[4mp[4mp[4ml[4mi[4mc[4ma[4mn[4mt[4m.[4mc[4mo[4mn[4mf[24m[?1l>[?2004l
+]2;sudo wpa_supplicant -B -i wlp2s0 -c /etc/wpa_supplicant/wpa_supplicant.conf]1;wpa_supplicantSuccessfully initialized wpa_supplicant
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[1m[31ms[0m[39m[90mudo wpa_supplicant -B -i wlp2s0 -c /etc/wpa_supplicant/wpa_supplicant.c[90mo[90mnf[39m[K[A[6C[0m[32ms[32mu[39m[1m[31ms[1m[31mu[1m[31mo[0m[39m[90md[90m [90mi[90mf[90mc[90mo[90mn[90mf[90mi[90mg[90m [90me[90mn[90mo[90m1[90m:[90m0[90m [90m1[90m1[90m.[90m1[90m4[90m6[90m.[90m2[90m2[90m5[90m.[90m2[90m0[90m/[90m1[90m6[90m [90mu[90mp[39m[K[1B[K[A[11C[1m[31mo[1m[31md[0m[39m[39m [39mw[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [34D[90mi[90mfconfig eno1:0 11.146.225.20/16 up[39m[35D[90m [1m[31mo[0m[39m[0m[90md[0m[32ms[0m[32mu[39m[0m[90md[90mo[90m [90mw[90mp[90ma[90m_[90ms[90mu[90mp[90mp[90ml[90mi[90mc[90ma[90mn[90mt[90m [90m-[90mB[90m [90m-[90mi[90m [90mw[90ml[90mp[90m2[90ms[90m0[90m [90m-[90mc[90m [90m/[90me[90mt[90mc[90m/wpa_supplicant/wpa_supplicant.c[90mo[90mnf[39m[K[A[7C[1m[31ms[1m[31mu[1m[31md[0m[39m[0m[4m[32ms[0m[4m[32mu[0m[4m[32md[4m[32mo[24m[39m[39m [32mw[39m[1m[31mw[1m[31ma[0m[39m[K[1B[K[A[15C[1m[31ma[1m[31mp[0m[39m[1m[31ma[0m[39m[0m[39m [0m[32mw[39m[0m[90mp[90ma_supplicant -B -i wlp2s0 -c /etc/wpa_supplicant/wpa_supplicant.c[90mo[90mnf[39m[K[A[11C[1m[31mw[1m[31mp[0m[39m[1m[31mp[1m[31ma[0m[39m[1m[31ma[1m[31m_[0m[39m[1m[31m_[1m[31mc[0m[39m[90ml[90mi[39m[K[1B[K[A[18C[0m[32mw[0m[32mp[0m[32ma[0m[32m_[0m[32mc[32ml[32mi[39m[1m [0m[0m [?1l>[?2004l[1B]2;sudo wpa_cli]1;wpa_cliwpa_cli v2.4
+Copyright (c) 2004-2015, Jouni Malinen <j@w1.fi> and contributors
+
+This software may be distributed under the terms of the BSD license.
+See README for more details.
+
+
+Selected interface 'wlp2s0'
+
+Interactive mode
+
+> scan
+OK
+> <3>CTRL-EVENT-SCAN-STARTED 
+> <3>CTRL-EVENT-SCAN-RESULTS 
+> scan re[K[K[K_results 
+bssid / frequency / signal level / flags / ssid
+00:24:14:31:8a:f3	2462	-45	[WPA2-EAP-CCMP][ESS]	eduroam
+00:24:14:31:8a:f4	2462	-53	[WPA2-EAP-CCMP][ESS]	pwwifi2
+00:24:14:31:8a:f5	2462	-53	[WPA2-EAP-CCMP][ESS]	pw.edu.pl
+f0:9f:c2:7d:8c:40	2412	-64	[WPA2-EAP-CCMP][ESS]	ZETIS
+ac:22:0b:99:c3:bc	2447	-67	[WPA2-PSK-CCMP][ESS]	ZWNIKE_B
+00:24:14:31:92:64	2412	-68	[WPA2-EAP-CCMP][ESS]	pwwifi2
+00:22:b0:a3:6e:50	2462	-73	[WPA-PSK-TKIP][ESS]	zakamarek
+00:24:14:31:95:33	2462	-74	[WPA2-EAP-CCMP][ESS]	eduroam
+00:24:14:31:95:35	2462	-74	[WPA2-EAP-CCMP][ESS]	pw.edu.pl
+00:24:14:31:8a:fb	5240	-80	[WPA2-EAP-CCMP][ESS]	pwwifi2
+00:24:14:31:8a:fc	5240	-80	[WPA2-EAP-CCMP][ESS]	eduroam
+00:24:14:31:8a:fa	5240	-80	[WPA2-EAP-CCMP][ESS]	pw.edu.pl
+dc:ef:09:a2:86:06	2412	-77	[WPA2-PSK-CCMP][ESS]	BMP Research Group 2.4G
+00:24:14:31:2f:83	2412	-78	[WPA2-EAP-CCMP][ESS]	eduroam
+00:24:14:31:8a:f0	2462	-47	[WEP][ESS]	konferencja
+00:24:14:31:8a:ff	5240	-80	[WEP][ESS]	konferencja
+00:24:14:31:8a:f2	2462	-46	[ESS]	pwwifi-students
+00:24:14:31:8a:f1	2462	-53	[ESS]	pwwifi
+00:24:14:31:92:62	2412	-62	[ESS]	pwwifi-students
+00:24:14:31:8a:fd	5240	-81	[ESS]	pwwifi-students
+00:24:14:31:8a:fe	5240	-81	[ESS]	pwwifi
+00:24:14:31:2f:82	2412	-78	[ESS]	pwwifi-students
+00:24:14:31:2f:81	2412	-80	[ESS]	pwwifi
+00:24:14:31:94:b2	2437	-82	[ESS]	pwwifi-students
+> add [K[K[K[Kadd_network
+0
+> set_network 0 ssid pw[K[Kpwwifi-students
+FAIL
+> set_network 0 ssid pwwifi-students"pwwifi-students[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"
+OK
+> enable_network 0
+OK
+> dis
+disable_network  disassociate     disconnect       
+> dis
+disable_network  disassociate     disconnect       
+> disable_network 0
+OK
+> set_network 0 key_mgmt NONE
+OK
+> ena[K[K[Kset_network 0 key_mgmt NONE[C[C[10Pdisable_network 0[C[C[1Pen[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cset_network 0 ssid "pwwifi-students"[C[C[20Penable_network 0
+OK
+> <3>CTRL-EVENT-SCAN-STARTED 
+> <3>CTRL-EVENT-SCAN-RESULTS 
+> <3>SME: Trying to authenticate with 00:24:14:31:8a:f2 (SSID='pwwifi-students' freq=2462 MHz)
+> <3>Trying to associate with 00:24:14:31:8a:f2 (SSID='pwwifi-students' freq=2462 MHz)
+> <3>Associated with 00:24:14:31:8a:f2
+> <3>CTRL-EVENT-CONNECTED - Connection to 00:24:14:31:8a:f2 completed [id=0 id_str=]
+> <3>CTRL-EVENT-REGDOM-CHANGE init=COUNTRY_IE type=COUNTRY alpha2=PL
+> save_config
+OK
+> > [K[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[H[2J[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[1m[31mi[0m[39m[90mp link set dev wlp2s0 down[39m[26D[0m[32mi[32mp[39m[1m[31mi[0m[39m[90mp[0m[32mi[32mp[39m[39m [39ma[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [23D[?1l>[?2004l
+]2;ip a]1;ip1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eno2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether e8:40:f2:ec:5e:43 brd ff:ff:ff:ff:ff:ff
+    inet 10.146.225.3/16 brd 10.146.255.255 scope global eno2
+       valid_lft forever preferred_lft forever
+    inet6 fe80::ea40:f2ff:feec:5e43/64 scope link 
+       valid_lft forever preferred_lft forever
+3: eno1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether e8:40:f2:ec:5e:46 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::ea40:f2ff:feec:5e46/64 scope link 
+       valid_lft forever preferred_lft forever
+4: wlp2s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:24:d7:7d:ba:8c brd ff:ff:ff:ff:ff:ff
+    inet 10.68.17.233/16 brd 10.68.255.255 scope global wlp2s0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::224:d7ff:fe7d:ba8c/64 scope link 
+       valid_lft forever preferred_lft forever
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[1m[31mi[0m[39m[90mp a[39m[0m[32mi[32mp[39m[39m [39m[4ml[24m[90mink set dev wlp2s0 down[39m[23D[24ml[39mi[39mn[39mk[39m [39ms[39me[39mt[39m [39md[39me[39mv[39m [39mw[39ml[39mp[39m2[39ms[39m0[39m [39md[39mo[39mw[39mn down  down  down  down  down  down e downn downo down2 down[?1l>[?2004l
+]2;ip link set dev eno2 down]1;ipRTNETLINK answers: Operation not permitted
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;31m➜  [36m~[00m [K[?1h=[?2004h[1m[31ms[0m[39m[90mudo dhclient wlp2s0[39m[19D[0m[32ms[32mu[39m[1m[31ms[1m[31mu[1m[31mo[0m[39m[90md[90m [90mi[90mf[90mc[90mo[90mn[90mf[90mi[90mg[90m [90me[90mn[90mo[90m1[90m:[90m0[90m 11.146.225.20/16 up[39m[37D[1m[31mo[1m[31md[0m[39m[39m [39m![39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [34D[34m![34m![39m[?1l>[?2004l
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;31m➜  [36m~[00m suod ip link set dev eno2 down[K[?1h=[?2004h[30D[1m[31ms[1m[31mu[1m[31mo[1m[31md[0m[39m[26C[?1l>[?2004l
+]2;suod ip link set dev eno2 down]1;suodzsh: command not found: suod
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;31m➜  [36m~[00m [K[?1h=[?2004h[1m[31ms[0m[39m[90muod ip link set dev eno2 down[39m[29D[0m[32ms[32mu[39m[1m[31ms[1m[31mu[1m[31mo[0m[39m[1m[31mo[1m[31md[0m[39m[39m [90m [1m[31mo[0m[39m[0m[90md[0m[32ms[0m[32mu[39m[0m[90mo[1m[31ms[0m[39m[90mu[0m[32ms[32mu[39m[1m[31ms[1m[31mu[1m[31md[0m[39m[90mo[90m [90md[90mh[90mc[2C[90me[90mn[90mt[90m [90mw[90ml[90mp[90m2[90ms[90m0[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [27D[0m[4m[32ms[0m[4m[32mu[0m[4m[32md[4m[32mo[24m[39m[39m [1m[31m![0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [14D[0m[34m![34m$[39m[?1l>[?2004l
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;31m➜  [36m~[00m sudo down[K[?1h=[?2004h[9D[4m[32ms[4m[32mu[4m[32md[4m[32mo[24m[39m [1m[31md[1m[31mo[1m[31mw[1m[31mn[0m[39m[1m[31mw[0m[39m[0m[39m [0m[33md[0m[33mo[39m[0m[39m [32md[39m[90mh[90mclient wlp2s0[39m[14D[90md[90m [24m[1m[31ms[24m[1m[31mu[24m[1m[31md[0m[39m[24m[90mo[0m[32ms[0m[32mu[39m[0m[90mo[90md[90m [90mi[90mp[90m [2C[90mn[90mk[90m [90ms[90me[90mt[90m [90md[90me[90mv[90m eno2 down[39m[28D[1m[31ms[0m[39m[90mu[0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [30D[1m[31ms[0m[39m[90muod ip link set dev eno2 down[39m[29D[0m[32ms[32mu[39m[1m[31ms[1m[31mu[1m[31md[0m[39m[90mo[90m [90md[90mh[90mc[2C[90me[90mn[90mt[90m [90mw[90ml[90mp[90m2[90ms[90m0[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [27D[0m[32ms[0m[32mu[39m[0m[90mo[90md[90m [90mi[90mp[90m [2C[90mn[90mk[90m [90ms[90me[90mt[90m [90md[90me[90mv[90m eno2 down[39m[28D[1m[31ms[1m[31mu[1m[31md[0m[39m[90mo[90m [90md[90mh[90mc[2C[90me[90mn[90mt[90m [90mw[90ml[90mp[90m2[90ms[90m0[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [27D[0m[4m[32ms[0m[4m[32mu[0m[4m[32md[4m[32mo[24m[39m[39m [7m[32mi[7m[32mp[39m[39m[7m [39m[7ml[39m[7mi[39m[7mn[39m[7mk[39m[7m [39m[7ms[39m[7me[39m[7mt[39m[7m [39m[7md[39m[7me[39m[7mv[7m eno2 down[27m[25D[27m[32mi[27m[32mp[39m[27m [27ml[27mi[27mn[27mk[27m [27ms[27me[27mt[27m [27md[27me[27mv[27m [27me[27mn[27mo[27m2[27m [27md[27mo[27mw[27mn[?1l>[?2004l
+]2;sudo ip link set dev eno2 down]1;ip[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[4m[32msudo[24m[39m [32mip[39m link set dev eno2 down[90mn[39m[90mw[90mo[90md[90m [90m2[90mo[90mn[90me[90m [90mv[90me[90md[90m [90mt[90me[90ms[90m [90mk[90mn[39m[4ml[24m[90mi[24m[90ml[90m [1m[31mi[0m[39m[90mp[0m[90mi[90m [24m[1m[31ms[24m[1m[31mu[24m[1m[31md[0m[39m[24m[90mo[0m[32ms[0m[32mu[39m[0m[90md[1m[31ms[0m[39m[90mu[0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [30D[H[2J[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[1m[31mi[0m[39m[90mp link set dev eno2 down[39m[24D[0m[32mi[32mp[39m[39m [39ma[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [21D[?1l>[?2004l
+]2;ip a]1;ip1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eno2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether e8:40:f2:ec:5e:43 brd ff:ff:ff:ff:ff:ff
+    inet 10.146.225.3/16 brd 10.146.255.255 scope global eno2
+       valid_lft forever preferred_lft forever
+    inet6 fe80::ea40:f2ff:feec:5e43/64 scope link 
+       valid_lft forever preferred_lft forever
+3: eno1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether e8:40:f2:ec:5e:46 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::ea40:f2ff:feec:5e46/64 scope link 
+       valid_lft forever preferred_lft forever
+4: wlp2s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:24:d7:7d:ba:8c brd ff:ff:ff:ff:ff:ff
+    inet 10.68.17.233/16 brd 10.68.255.255 scope global wlp2s0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::224:d7ff:fe7d:ba8c/64 scope link 
+       valid_lft forever preferred_lft forever
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[1m[31mp[0m[39m[90ming-all-stations[39m[16D[1m[31mp[1m[31mi[0m[39m[1m[31mp[1m[31mi[1m[31mn[0m[39m[1m[31mn[1m[31mt[0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [13D [1m[31mn[0m[39m[0m[90mg[90m-all-stations[39m[14D[1m[31mp[1m[31mi[0m[39m[0m[90mn[1m[31mp[1m[31mi[1m[31mn[0m[39m[0m[32mp[0m[32mi[0m[32mn[32mg[39m[39m [90ms[90m1[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [12D[39m[7m1[39m[7m.[7m1.1.1[27m[27m1[27m.[27m1[27m.[27m1[27m.[27m1[?1l>[?2004l
+]2;ping 1.1.1.1]1;pingconnect: Network is unreachable
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;31m➜  [36m~[00m [K[?1h=[?2004h[32md[39m[90mhclient wlp2s0[39m[14D[1m[31md[1m[31mh[0m[39m[0m[32md[0m[32mh[32mc[39m[32mc[32ml[32mi[32me[32mn[32mt[39m[39m [39mw[39ml[39mp[39m2[39ms[39m0[?1l>[?2004l
+]2;dhclient wlp2s0]1;dhclientRTNETLINK answers: Operation not permitted
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;31m➜  [36m~[00m [K[?1h=[?2004h[1m[31ms[0m[39m[90mudo ip link set dev eno2 down[39m[29D[0m[32ms[32mu[39m[1m[31ms[1m[31mu[1m[31mo[0m[39m[90md[1m[31mo[1m[31md[0m[39m[39m [90m [1m[31mo[0m[39m[0m[90md[0m[32ms[0m[32mu[39m[0m[90md[90mo[1m[31ms[1m[31mu[1m[31md[0m[39m[0m[4m[32ms[0m[4m[32mu[0m[4m[32md[4m[32mo[24m[39m[39m [1m[31m![0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [24D[0m[34m![34m![39m[?1l>[?2004l
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;31m➜  [36m~[00m sudo dhclient wlp2s0[K[?1h=[?2004h[20D[4m[32ms[4m[32mu[4m[32md[4m[32mo[24m[39m [32md[32mh[32mc[32ml[32mi[32me[32mn[32mt[39m[7C[?1l>[?2004l
+]2;sudo dhclient wlp2s0]1;dhclientRTNETLINK answers: File exists
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[32mw[39m[90mpa_supplicant -B -i wlp2s0 -c /etc/wpa_supplicant/wpa_supplicant.conf[39m[69D[1m[31mw[1m[31mp[0m[39m[1m[31mw[1m[31mp[1m[31ma[0m[39m[1m[31ma[1m[31m_[0m[39m[1m[31m_[1m[31mc[0m[39m[90ml[90mi[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [65D[1m[31mc[1m[31ml[0m[39m[0m[32mw[0m[32mp[0m[32ma[0m[32m_[0m[32mc[0m[32ml[32mi[39m[?1l>[?2004l
+]2;wpa_cli]1;wpa_cliwpa_cli v2.4
+Copyright (c) 2004-2015, Jouni Malinen <j@w1.fi> and contributors
+
+This software may be distributed under the terms of the BSD license.
+See README for more details.
+
+
+
+Interactive mode
+
+Could not connect to wpa_supplicant: (nil) - re-trying
+^C[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[1m[31ms[0m[39m[90mudo dhclient wlp2s0[39m[19D[0m[32ms[32mu[39m[1m[31ms[1m[31mu[1m[31md[0m[39m[0m[4m[32ms[0m[4m[32mu[0m[4m[32md[4m[32mo[24m[39m[39m [1m[31m![0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [14D[0m[34m![34m![39m[?1l>[?2004l
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m sudo wpa_cli[K[?1h=[?2004h[12D[4m[32ms[4m[32mu[4m[32md[4m[32mo[24m[39m [32mw[32mp[32ma[32m_[32mc[32ml[32mi[39m[?1l>[?2004l
+]2;sudo wpa_cli]1;wpa_cliwpa_cli v2.4
+Copyright (c) 2004-2015, Jouni Malinen <j@w1.fi> and contributors
+
+This software may be distributed under the terms of the BSD license.
+See README for more details.
+
+
+Selected interface 'wlp2s0'
+
+Interactive mode
+
+> list_<3>CTRL-EVENT-DISCONNECTED bssid=00:24:14:31:92:62 reason=4 locally_generated=1
+> list_<3>CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+> list_
+list_creds     list_networks  
+> list_<3>CTRL-EVENT-SCAN-STARTED 
+> list_<3>CTRL-EVENT-SCAN-RESULTS 
+> list_<3>WPS-AP-AVAILABLE 
+> list_<3>SME: Trying to authenticate with 00:24:14:31:92:62 (SSID='pwwifi-students' freq=2412 MHz)
+> list_<3>Trying to associate with 00:24:14:31:92:62 (SSID='pwwifi-students' freq=2412 MHz)
+> list_<3>Associated with 00:24:14:31:92:62
+> list_<3>CTRL-EVENT-CONNECTED - Connection to 00:24:14:31:92:62 completed [id=0 id_str=]
+> list_<3>CTRL-EVENT-REGDOM-CHANGE init=COUNTRY_IE type=COUNTRY alpha2=PL
+> list_[K[K[K[K[K> [K[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[H[2J[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[1m[31mi[0m[39m[90mp a[39m[0m[32mi[32mp[39m[39m [39mr[?1l>[?2004l
+]2;ip r]1;ipdefault via 10.68.0.1 dev wlp2s0 
+10.68.0.0/16 dev wlp2s0  proto kernel  scope link  src 10.68.17.233 
+10.146.0.0/16 dev eno2  proto kernel  scope link  src 10.146.225.3 
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[1m[31ms[0m[39m[90mudo wpa_cli[39m[11D[0m[32ms[32mu[39m[1m[31ms[1m[31mu[1m[31md[0m[39m[0m[4m[32ms[0m[4m[32mu[0m[4m[32md[4m[32mo[24m[39m[39m [32mr[39m[90me[90mb[90mo[90mo[90mt[90m [90m&& exit[39m[13D[1m[31mr[1m[31mo[0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [12D[1m[31mo[1m[31mu[0m[39m[1m[31mu[1m[31mt[0m[39m[0m[32mr[0m[32mo[0m[32mu[0m[32mt[32me[39m add de[4mD[4me[4msktop[1m[4m/[0m[24m[4mp[24m[0m[24m [4mo[24m[24m [4mt[24m[24m [4mk[24m[24m [4ms[24m[24m [4me[24m[24m [4mD[24m[24m [24m default gw             [1m[31mr[1m[31mo[1m[31mu[1m[31mt[0m[39m[39m [1m[31mu[0m[39m[0m[39m [1m[31mo[0m[39m[0m[39m [0m[32mr[39m[0m[90me[90mboot && exit[39m[13D[90mw[90mp[90ma[90m_[90mc[90ml[90mi[39m[39m [39m [39m [39m [39m [39m [39m [14D[90m [24m[1m[31ms[24m[1m[31mu[24m[1m[31md[0m[39m[24m[90mo[0m[32ms[0m[32mu[39m[0m[90md[1m[31ms[0m[39m[90mu[0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [12D[1m[31mi[0m[39m[90mp r[39m[0m[32mi[32mp[39m[39m [39mr[?1l>[?2004l
+]2;ip r]1;ipdefault via 10.68.0.1 dev wlp2s0 
+10.68.0.0/16 dev wlp2s0  proto kernel  scope link  src 10.68.17.233 
+10.146.0.0/16 dev eno2  proto kernel  scope link  src 10.146.225.3 
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[1m[31mi[0m[39m[90mp r[39m[0m[32mi[32mp[39m[39m [39mr [90madd default via 10.146.146.5 dev eno1[39m[37D[39m-[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [36Dh[?1l>[?2004l
+]2;ip r -h]1;ipCommand "-h" is unknown, try "ip route help".
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;31m➜  [36m~[00m [K[?1h=[?2004h[4mm[24m[90man nmcli-examples[39m[17D[4mm[39m[4ma[24m[24m[32mm[24m[32ma[32mn[39m[39m [39mi[90mn[90ms[90mm[90mo[90md[39m[39m [39m [39m [39m [39m [39m [39m [39m [13D[90mn[90mm[90mc[90ml[90mi[90m-[90mexamples[39m[14D[90m [39m[39m[4mm[39m[4ma[24m[90mn[39m[4mm[24m[24m[90ma[24m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [18D[1m[31mi[0m[39m[90mp r -h[39m[0m[32mi[32mp[39m[39m [39mr[39m [39m [39m [?1l>[?2004l
+]2;ip r]1;ipdefault via 10.68.0.1 dev wlp2s0 
+10.68.0.0/16 dev wlp2s0  proto kernel  scope link  src 10.68.17.233 
+10.146.0.0/16 dev eno2  proto kernel  scope link  src 10.146.225.3 
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[1m[31mi[0m[39m[90mp r[39m[0m[32mi[32mp[39m[39m [39mad[90md 10.146.225.1/16 dev eno1[39m[26D[39md[39m [39md[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [23Default [7m10.146.146.5[27m[12D[27m1[27m0[27m.[27m1[27m4[27m6[27m.[27m1[27m4[27m6[27m.[27m5 voe[1C[1C add default 10.146.146.5 voe[29Dr add default 10.146.146.5 voe[29Do add default 10.146.146.5 voe[29Du add default 10.146.146.5 voe[29Dt add default 10.146.146.5 voe[29De add default 10.146.146.5 voe[29D[29C  ia d eno2[?1l>[?2004l
+]2;ip route add default 10.146.146.5 via eno2]1;ipError: either "to" is duplicate, or "10.146.146.5" is a garbage.
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;31m➜  [36m~[00m [K[?1h=[?2004h[32mip[39m route add default 10.146.146.5 via eno2[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[P[30C [31D[P[30C [31D[P[30C [31Dc default 10.146.146.5 via eno2[30Dh default 10.146.146.5 via eno2[30Da default 10.146.146.5 via eno2[30Dn default 10.146.146.5 via eno2[30Dg default 10.146.146.5 via eno2[30De default 10.146.146.5 via eno2[30D[?1l>[?2004l
+]2;ip route change default 10.146.146.5 via eno2]1;ipError: either "to" is duplicate, or "10.146.146.5" is a garbage.
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;31m➜  [36m~[00m [K[?1h=[?2004h[32mip[39m route change default 10.146.146.5 via eno2[P[30C [31D[P[30C [31D[P[30C [31D[P[30C [31D[P[30C [31D[P[30C [31Ds default 10.146.146.5 via eno2[30De default 10.146.146.5 via eno2[30Dt default 10.146.146.5 via eno2[30D[?1l>[?2004l
+]2;ip route set default 10.146.146.5 via eno2]1;ipCommand "set" is unknown, try "ip route help".
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;31m➜  [36m~[00m [K[?1h=[?2004h[1m[31mi[0m[39m[90mp route set default 10.146.146.5 via eno2[39m[41D[0m[32mi[32mp[39m[39m [39mr[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [38D[?1l>[?2004l
+]2;ip r]1;ipdefault via 10.68.0.1 dev wlp2s0 
+10.68.0.0/16 dev wlp2s0  proto kernel  scope link  src 10.68.17.233 
+10.146.0.0/16 dev eno2  proto kernel  scope link  src 10.146.225.3 
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[1m[31mi[0m[39m[90mp r[39m[0m[32mi[32mp[39m[39m [39mro[90mute set default 10.146.146.5 via eno2[39m[37D[39mu[39mt[39me[39m [39md[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [32Del  [90ms[90met default 10.146.146.5 via eno2[39m[33D[90m [90me[90mt[90mu[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [38D[90mr[39m[90m [1m[31mi[0m[39m[90mp[0m[39m[39m [39m [39m [39m [H[2J[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[1m[31mi[0m[39m[90mp r[39m[0m[32mi[32mp[39m[39m [39mr[?1l>[?2004l
+]2;ip r]1;ipdefault via 10.68.0.1 dev wlp2s0 
+10.68.0.0/16 dev wlp2s0  proto kernel  scope link  src 10.68.17.233 
+10.146.0.0/16 dev eno2  proto kernel  scope link  src 10.146.225.3 
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@s3: ~]1;~[0m[27m[24m[J[01;35ms3 [01;32m➜  [36m~[00m [K[?1h=[?2004h[?2004l
+
+Script done on pon, 6 maj 2019, 17:59:31

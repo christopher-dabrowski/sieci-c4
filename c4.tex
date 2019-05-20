@@ -36,6 +36,7 @@ Celem laboratorium jest zbadanie lokalnych sieci radiowych oraz podłączenie i 
 Przy pomocy aplikacji \textit{Wifi Analyzer} przeskanowałem dostępne sieci radiowe oraz pokrycie poszczególnych kanałów.
 Wyniki analizy sieci pokazuje rysunek \ref{fig:wifiAnalizer}.
 
+%TODO: Skompilować gdzieś, gdzie subfigure działa
 % \begin{figure}[H]
 %     \centering
 %     \begin{subfigure}[b]{0.49\textwidth}
@@ -51,6 +52,49 @@ Wyniki analizy sieci pokazuje rysunek \ref{fig:wifiAnalizer}.
 %     \label{fig:wifiAnalizer}
 % \end{figure}
 
+Dodatkowo przeskanowałem dostępne sieci przy pomocy polecenia \texttt{nmcli device wifi list}.
+
+\begin{verbatim}
+*  SSID                  MODE   CHAN  RATE    SIGNAL  SECURITY
+konferencja           Infra  11    54 Mbit/s  74      WEP
+pwwifi-students       Infra  11    54 Mbit/s  30      --
+pwwifi2               Infra  11    54 Mbit/s  30      WPA2 802.1X
+pwwifi-students       Infra  11    54 Mbit/s  35      --
+vlab_net              Infra  11    54 Mbit/s  35      WPA2
+konferencja           Infra  11    54 Mbit/s  30      WEP
+pwwifi                Infra  11    54 Mbit/s  49      --
+ZETIS                 Infra  1     54 Mbit/s  99      WPA2 802.1X
+pwwifi-students       Infra  6     54 Mbit/s  34      --
+TROL                  Infra  1     54 Mbit/s  29      --
+pwwifi2               Infra  1     54 Mbit/s  52      WPA2 802.1X
+pwwifi                Infra  11    54 Mbit/s  30      --
+pwwifi2               Infra  11    54 Mbit/s  75      WPA2 802.1X
+pwwifi2               Infra  6     54 Mbit/s  35      WPA2 802.1X
+Sieć Wi-Fi (WE-Lech)  Infra  6     54 Mbit/s  30      WPA2
+pwwifi-students       Infra  6     54 Mbit/s  37      --
+Stery3                Infra  11    54 Mbit/s  30      WPA1 WPA2
+asdf                  Infra  9     54 Mbit/s  49      WPA1 WPA2
+pwwifi2               Infra  6     54 Mbit/s  30      WPA2 802.1X
+linksys               Infra  3     54 Mbit/s  24      WPA2
+konferencja           Infra  1     54 Mbit/s  54      WEP
+konferencja           Infra  6     54 Mbit/s  40      WEP
+konferencja           Infra  1     54 Mbit/s  37      WEP
+konferencja           Infra  6     54 Mbit/s  34      WEP
+is_wifi               Infra  4     54 Mbit/s  30      WEP
+konferencja           Infra  6     54 Mbit/s  30      WEP
+pwwifi                Infra  1     54 Mbit/s  54      --
+pwwifi-students       Infra  1     54 Mbit/s  49      --
+pwwifi                Infra  6     54 Mbit/s  44      --
+pwwifi                Infra  1     54 Mbit/s  37      --
+pwwifi-students       Infra  11    54 Mbit/s  30      --
+pwwifi2               Infra  1     54 Mbit/s  42      WPA2 802.1X
+pwwifi2               Infra  6     54 Mbit/s  32      WPA2 802.1X
+konferencja           Infra  1     54 Mbit/s  20      WEP
+pwwifi                Infra  1     54 Mbit/s  37      --
+pwwifi-students       Infra  1     54 Mbit/s  24      --
+pwwifi-students       Infra  1     54 Mbit/s  20      --
+\end{verbatim}
+
 \section{Schemat sieci}
 Strukturę urządzeń w sieci przedstawia rysunek \ref{fig:SchematSieci}.
 
@@ -64,6 +108,63 @@ Strukturę urządzeń w sieci przedstawia rysunek \ref{fig:SchematSieci}.
 
 \section{Podłączenie do sieci wifi w środowisku graficznym}
 W celu przyłączenia do sieci skorzystam z nakładki graficznej na program \textit{NetworkManager} wbudowanej w system Ubuntu.
+\vspace{5 mm}
 
+Przed podłączeniem sprawdziłem stan interfejsu radiowego poleceniem \texttt{ip~a}.
+\begin{verbatim}
+    ip a
+
+    4: wlp2s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether 00:24:d7:92:0e:dc brd ff:ff:ff:ff:ff:ff
+\end{verbatim}
+
+Oraz tablicę tras, poleceniem \texttt{ip r}.
+\begin{verbatim}
+    ip r 
+
+    default via 10.146.146.5 dev eno2
+    10.146.0.0/16 dev eno2  proto kernel  scope link  src 10.146.225.1
+\end{verbatim}
+
+Z otrzymanych wyników wiać, że interfejs radiowy jest \textbf{nieaktywny} a trasa domyślna wiedzie przez interfejs fizyczny.
+\vspace{5 mm}
+
+Po podłączeniu do sieci \textbf{ZETIS} wyniki tych poleceń wyglądały następująco:
+\begin{verbatim}
+    ip a
+
+    4: wlp2s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:24:d7:7d:ba:8c brd ff:ff:ff:ff:ff:ff
+    inet 10.68.17.233/16 brd 10.68.255.255 scope global dynamic wlp2s0
+       valid_lft 3601sec preferred_lft 3601sec
+    inet6 fe80::224:d7ff:fe7d:ba8c/64 scope link 
+       valid_lft forever preferred_lft forever
+\end{verbatim}
+
+\begin{verbatim}
+    ip r 
+
+    default via 10.146.146.5 dev eno2 
+    default via 10.68.0.1 dev wlp2s0  proto static  metric 600 
+    10.68.0.0/16 dev wlp2s0  proto kernel  scope link  src 10.68.17.233  metric 600 
+    10.146.0.0/16 dev eno2  proto kernel  scope link  src 10.146.225.3 
+    169.254.0.0/16 dev wlp2s0  scope link  metric 1000 
+    192.0.2.4 via 10.68.0.1 dev wlp2s0  proto dhcp  metric 600 
+\end{verbatim}
+
+Widać, że interfejs radiowy \texttt{wlp2s0} jest teraz włączony oraz skonfigurowany.
+Do tablicy tras została dodana nowa domyślna trasa prowadząca przez interfejs radiowy.
+\vspace{5 mm}
+
+Dodatkowo pobrałem logi z serwera RADIUS połączeniem komend \texttt{ssh ldap grep -w \$USER /var/log/radiusd | tail -2}.
+\begin{verbatim}
+    ssh ldap grep -w \$USER /var/log/radiusd | tail -2
+
+    Mon May 13 17:01:43 2019 : Auth: (2156)   Login OK: [dabrowk1] 
+        (from client ap225 port 0 via TLS tunnel)
+    Mon May 13 17:01:43 2019 : Auth: (2156) Login OK: [dabrowk1]
+        (from client ap225 port 0 cli 00-22-3F-01-F9-12)
+\end{verbatim}
+Z zebranych logów wynika, że serwer RADIUS zaakceptował podane dane dostępowe.
 
 \end{document}

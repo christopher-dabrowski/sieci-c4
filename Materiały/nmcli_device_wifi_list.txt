@@ -1,0 +1,38 @@
+*  SSID                  MODE   CHAN  RATE       SIGNAL  SECURITY
+   konferencja           Infra  11    54 Mbit/s  74      WEP
+   pwwifi-students       Infra  11    54 Mbit/s  30      --
+   pwwifi2               Infra  11    54 Mbit/s  30      WPA2 802.1X
+   pwwifi-students       Infra  11    54 Mbit/s  35      --
+   vlab_net              Infra  11    54 Mbit/s  35      WPA2
+   konferencja           Infra  11    54 Mbit/s  30      WEP
+   pwwifi                Infra  11    54 Mbit/s  49      --
+   ZETIS                 Infra  1     54 Mbit/s  99      WPA2 802.1X
+   pwwifi-students       Infra  6     54 Mbit/s  34      --
+   TROL                  Infra  1     54 Mbit/s  29      --
+   pwwifi2               Infra  1     54 Mbit/s  52      WPA2 802.1X
+   pwwifi                Infra  11    54 Mbit/s  30      --
+   pwwifi2               Infra  11    54 Mbit/s  75      WPA2 802.1X
+   pwwifi2               Infra  6     54 Mbit/s  35      WPA2 802.1X
+   Sieć Wi-Fi (WE-Lech)  Infra  6     54 Mbit/s  30      WPA2
+   pwwifi-students       Infra  6     54 Mbit/s  37      --
+   Stery3                Infra  11    54 Mbit/s  30      WPA1 WPA2
+   asdf                  Infra  9     54 Mbit/s  49      WPA1 WPA2
+   pwwifi2               Infra  6     54 Mbit/s  30      WPA2 802.1X
+   linksys               Infra  3     54 Mbit/s  24      WPA2
+   konferencja           Infra  1     54 Mbit/s  54      WEP
+   konferencja           Infra  6     54 Mbit/s  40      WEP
+   konferencja           Infra  1     54 Mbit/s  37      WEP
+   konferencja           Infra  6     54 Mbit/s  34      WEP
+   is_wifi               Infra  4     54 Mbit/s  30      WEP
+   konferencja           Infra  6     54 Mbit/s  30      WEP
+   pwwifi                Infra  1     54 Mbit/s  54      --
+   pwwifi-students       Infra  1     54 Mbit/s  49      --
+   pwwifi                Infra  6     54 Mbit/s  44      --
+   pwwifi                Infra  1     54 Mbit/s  37      --
+   pwwifi-students       Infra  11    54 Mbit/s  30      --
+   pwwifi2               Infra  1     54 Mbit/s  42      WPA2 802.1X
+   pwwifi2               Infra  6     54 Mbit/s  32      WPA2 802.1X
+   konferencja           Infra  1     54 Mbit/s  20      WEP
+   pwwifi                Infra  1     54 Mbit/s  37      --
+   pwwifi-students       Infra  1     54 Mbit/s  24      --
+   pwwifi-students       Infra  1     54 Mbit/s  20      --

@@ -1,0 +1,95 @@
+Script started on pon, 13 maj 2019, 17:50:52
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~]1;~[0m[27m[24m[J[01;35msc [01;32m➜  [36m~[00m [K[?1h=[?2004h[7m[32mnmcli[39m[7m dev status [27m[17D[27m[32mn[27m[32mm[27m[32mc[27m[32ml[27m[32mi[39m[27m [27md[27me[27mv[27m [27ms[27mt[27ma[27mt[27mu[27ms[27m [?1l>[?2004l
+]2;nmcli dev status]1;nmcliDEVICE           TYPE      STATE         CONNECTION 
+wlp3s0           wifi      disconnected  --         
+wlx00223f01f912  wifi      disconnected  --         
+eno1             ethernet  unmanaged     --         
+lo               loopback  unmanaged     --         
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~]1;~[0m[27m[24m[J[01;35msc [01;32m➜  [36m~[00m [K[?1h=[?2004h[1m[31mi[0m[39m[90mp r[39m[0m[32mi[32mp[39m[39m [39ma[?1l>[?2004l
+]2;ip a]1;ip1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eno1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 00:22:4d:50:98:b4 brd ff:ff:ff:ff:ff:ff
+    inet 10.146.225.12/16 brd 10.146.255.255 scope global eno1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::222:4dff:fe50:98b4/64 scope link 
+       valid_lft forever preferred_lft forever
+3: wlp3s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether 00:24:d7:7e:af:54 brd ff:ff:ff:ff:ff:ff
+4: wlx00223f01f912: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether 00:22:3f:01:f9:12 brd ff:ff:ff:ff:ff:ff
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~]1;~[0m[27m[24m[J[01;35msc [01;32m➜  [36m~[00m [K[?1h=[?2004h[7m[4m[32msudo[24m[39m[7m [7m[32msystemctl[39m[7m stop NetworkManager.service[27m[42D[27m[4m[32ms[27m[4m[32mu[27m[4m[32md[27m[4m[32mo[24m[39m[27m [27m[32ms[27m[32my[27m[32ms[27m[32mt[27m[32me[27m[32mm[27m[32mc[27m[32mt[27m[32ml[39m[27m [27ms[27mt[27mo[27mp[27m [27mN[27me[27mt[27mw[27mo[27mr[27mk[27mM[27ma[27mn[27ma[27mg[27me[27mr[27m.[27ms[27me[27mr[27mv[27mi[27mc[27me[?1l>[?2004l
+]2;sudo systemctl stop NetworkManager.service]1;systemctl[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~]1;~[0m[27m[24m[J[01;35msc [01;32m➜  [36m~[00m [K[?1h=[?2004h[7m[4m[32msudo[24m[39m[7m [7m[32msystemctl[39m[7m disable NetworkManager.service [27m[46D[27m[4m[32ms[27m[4m[32mu[27m[4m[32md[27m[4m[32mo[24m[39m[27m [27m[32ms[27m[32my[27m[32ms[27m[32mt[27m[32me[27m[32mm[27m[32mc[27m[32mt[27m[32ml[39m[27m [27md[27mi[27ms[27ma[27mb[27ml[27me[27m [27mN[27me[27mt[27mw[27mo[27mr[27mk[27mM[27ma[27mn[27ma[27mg[27me[27mr[27m.[27ms[27me[27mr[27mv[27mi[27mc[27me[27m [?1l>[?2004l
+]2;sudo systemctl disable NetworkManager.service]1;systemctlRemoved symlink /etc/systemd/system/dbus-org.freedesktop.nm-dispatcher.service.
+Removed symlink /etc/systemd/system/multi-user.target.wants/NetworkManager.service.
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~]1;~[0m[27m[24m[J[01;35msc [01;32m➜  [36m~[00m [K[?1h=[?2004h[1m[31ms[0m[39m[90mudo systemctl disable NetworkManager.service[39m[44D[0m[32ms[32mu[39m[1m[31ms[1m[31mu[1m[31md[0m[39m[0m[4m[32ms[0m[4m[32mu[0m[4m[32md[4m[32mo[24m[39m[39m [32ms[32my[32ms[32mt[32me[32mm[32mc[32mt[32ml[39m[39m [39md[39mi[39ms[39ma[39mb[39ml[39me[39m [39mN[39me[39mt[39mw[39mo[39mr[39mk[39mM[39ma[39mn[39ma[39mg[39me[39mr[39m.[39ms[39me[39mr[39mv[39mi[39mc[39me[1C[1C[1C[P[23C [24D[P[23C [24D[P[23C [24D[P[23C [24D[P[23C [24D[P[23C [24D[P[23C [24Ds NetworkManager.service[23Dt NetworkManager.service[23Da NetworkManager.service[23Dt NetworkManager.service[23Du NetworkManager.service[23Ds NetworkManager.service[23D[?1l>[?2004l
+]2;sudo systemctl status NetworkManager.service]1;systemctl[?1h=● NetworkManager.service - Network Manager[m
+   Loaded: loaded (/lib/systemd/system/NetworkManager.service; disabled; vendor [m
+   Active: inactive (dead) since pon 2019-05-13 17:51:50 CEST; 18s ago[m
+ Main PID: 1458 (code=exited, status=0/SUCCESS)[m
+[m
+maj 13 17:50:17 sc NetworkManager[1458]: <info>  WiFi hardware radio set enabled[m
+maj 13 17:50:17 sc NetworkManager[1458]: <info>  WWAN hardware radio set enabled[m
+maj 13 17:51:50 sc systemd[1]: Stopping Network Manager...[m
+maj 13 17:51:50 sc NetworkManager[1458]: <info>  caught SIGTERM, shutting down n[m
+maj 13 17:51:50 sc NetworkManager[1458]: <info>  (wlp3s0): device state change: [m
+maj 13 17:51:50 sc NetworkManager[1458]: (NetworkManager:1458): GLib-CRITICAL **[m
+maj 13 17:51:50 sc NetworkManager[1458]: <info>  (wlx00223f01f912): device state[m
+maj 13 17:51:50 sc NetworkManager[1458]: (NetworkManager:1458): GLib-CRITICAL **[m
+maj 13 17:51:50 sc NetworkManager[1458]: <info>  exiting (success)[m
+maj 13 17:51:50 sc systemd[1]: Stopped Network Manager.[m
+[7mlines 1-15/15 (END)[27m[K[K[?1l>[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~]1;~[0m[27m[24m[J[01;35msc [01;31m➜  [36m~[00m [K[?1h=[?2004h[H[2J[0m[27m[24m[J[01;35msc [01;31m➜  [36m~[00m [K[1m[31mv[0m[39m[90mim test.txt[39m[11D[0m[32mv[32mi[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [9D[90mm[90m test.txt[39m[10D[1m[31mv[0m[39m[90mi[0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [12D[1m[31ms[0m[39m[90mudo systemctl status NetworkManager.service[39m[43D[0m[32ms[32mu[39m[1m[31ms[1m[31mu[1m[31md[0m[39m[0m[4m[32ms[0m[4m[32mu[0m[4m[32md[4m[32mo[24m[39m[39m [1m[31mv[0m[39m[90mi[90mm[90m [90m/[90me[90mt[90mc[90m/[90mw[90mp[90ma[90m_[90ms[90mu[90mp[90mp[90ml[90mi[90mc[90ma[90mn[90mt[90m/[90mw[90mp[90ma[90m_[90ms[90mu[90mp[90mp[90ml[90mi[90mc[90ma[90mn[90mt[90m.[90mconf[39m[42D[0m[32mv[32mi[39m[32mi[32mm[39m[39m [39m[7m/[39m[7me[39m[7mt[39m[7mc[39m[7m/[39m[7mw[39m[7mp[39m[7ma[39m[7m_[39m[7ms[39m[7mu[39m[7mp[39m[7mp[39m[7ml[39m[7mi[39m[7mc[39m[7ma[39m[7mn[39m[7mt[39m[7m/[39m[7mw[39m[7mp[39m[7ma[39m[7m_[39m[7ms[39m[7mu[39m[7mp[39m[7mp[39m[7ml[39m[7mi[39m[7mc[39m[7ma[39m[7mn[39m[7mt[39m[7m.[39m[7mc[39m[7mo[39m[7mn[39m[7mf[27m[39D[27m/[27me[27mt[27mc[27m/[27mw[27mp[27ma[27m_[27ms[27mu[27mp[27mp[27ml[27mi[27mc[27ma[27mn[27mt[27m/[27mw[27mp[27ma[27m_[27ms[27mu[27mp[27mp[27ml[27mi[27mc[27ma[27mn[27mt[27m.[27mc[27mo[27mn[27mf[?1l>[?2004l
+]2;sudo vim /etc/wpa_supplicant/wpa_supplicant.conf]1;vim[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H]11;?[1;24r[?12;25h[?12l[?25h[27m[23m[m[H[2J[?25l[24;1H"/etc/wpa_supplicant/wpa_supplicant.conf" [Nowy Plik][>c[27m[23m[m[H[2J[2;1H[94m~                                                                               [3;1H~                                                                               [4;1H~                                                                               [5;1H~                                                                               [6;1H~                                                                               [7;1H~                                                                               [8;1H~                                                                               [9;1H~                                                                               [10;1H~                                                                               [11;1H~                                                                               [12;1H~                                                                               [13;1H~                                                                               [14;1H~                                                                               [15;1H~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [m[24;63H0,0-1    Wszystko"/etc/wpa_supplicant/wpa_supplicant.conf" [Nowy Plik][9C                 [1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[24;1H[1m-- WPROWADZANIE --[m[24;19H[K[24;63H0,1      Wszystko[1;1H[?12l[?25h[?25lctrl_interface=/run/wpa_supplicant
+update_config=1[2;16H[K[24;63H2,16[2;16H[?12l[?25h[24;1H[K[2;15H[?25l[24;63H2,15     Wszystko[2;15H[?12l[?25h[?25l[24;1H"/etc/wpa_supplicant/wpa_supplicant.conf"[24;63H[K[24;1H</wpa_supplicant/wpa_supplicant.conf" [Nowy] 2L, 51C zapisano
+[?1l>[?12l[?25h[?1049l[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~]1;~[0m[27m[24m[J[01;35msc [01;32m➜  [36m~[00m [K[?1h=[?2004h[1m[31mi[0m[39m[90mp a[39m[0m[32mi[32mp[39m[39m [39ma[90ma[39m[90m [1m[31mi[0m[39m[90mp[0m[39m[39m [39m [39m [39m [7m[32mwpa_supplicant[39m[7m -B -i interface -c [7m[4m/etc/wpa_supplicant/wpa_supplicant.con[7m[4mf[27m[24m[K[A[7C[27m[32mw[27m[32mp[27m[32ma[27m[32m_[27m[32ms[27m[32mu[27m[32mp[27m[32mp[27m[32ml[27m[32mi[27m[32mc[27m[32ma[27m[32mn[27m[32mt[39m[27m [27m-[27mB[27m [27m-[27mi[27m [27mi[27mn[27mt[27me[27mr[27mf[27ma[27mc[27me[27m [27m-[27mc[27m [27m[4m/[27m[4me[27m[4mt[27m[4mc[27m[4m/[27m[4mw[27m[4mp[27m[4ma[27m[4m_[27m[4ms[27m[4mu[27m[4mp[27m[4mp[27m[4ml[27m[4mi[27m[4mc[27m[4ma[27m[4mn[27m[4mt[27m[4m/[27m[4mw[27m[4mp[27m[4ma[27m[4m_[27m[4ms[27m[4mu[27m[4mp[27m[4mp[27m[4ml[27m[4mi[27m[4mc[27m[4ma[27m[4mn[27m[4mt[27m[4m.[27m[4mc[27m[4mo[27m[4mn[4mf[24m[A[79C[1C[1C[P[42C[4mf[24m [K[A[36C[P[43C[K[1B[K[A[36C[P[43C [44D[P[43C [44D[P[43C [44D[P[43C [44D[P[43C [44D[P[43C [44D[P[43C [44D[7mw[7ml[7mp[7m3[24m[7ms[24m[7m0[27m[24m [24m-[24mc[24m [4m/[4me[4mt[4mc[24m[9P[15C[4m/[4mw[4mp[4ma[4m_[4msupplicant.conf[24m[43D[27mw[27ml[27mp[27m3[27ms[27m0[?1l>[?2004l[1B]2;wpa_supplicant -B -i wlp3s0 -c /etc/wpa_supplicant/wpa_supplicant.conf]1;wpa_supplicantSuccessfully initialized wpa_supplicant
+Could not set interface wlp3s0 flags (UP): Operation not permitted
+nl80211: Could not set interface 'wlp3s0' UP
+nl80211: deinit ifname=wlp3s0 disabled_11b_rates=0
+wlp3s0: Failed to initialize driver interface
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~]1;~[0m[27m[24m[J[01;35msc [01;31m➜  [36m~[00m [K[?1h=[?2004h[1m[31ms[0m[39m[90mudo vim /etc/wpa_supplicant/wpa_supplicant.conf[39m[47D[0m[32ms[32mu[39m[1m[31ms[1m[31mu[1m[31md[0m[39m[0m[4m[32ms[0m[4m[32mu[0m[4m[32md[4m[32mo[24m[39m[39m [1m[31m![0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [42D[0m[34m![34m![39m[?1l>[?2004l
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~]1;~[0m[27m[24m[J[01;35msc [01;31m➜  [36m~[00m sudo wpa_supplicant -B -i wlp3s0 -c /etc/wpa_supplicant/wpa_supplicant.conf[K[?1h=[?2004h[A[5C[4m[32ms[4m[32mu[4m[32md[4m[32mo[24m[39m [32mw[32mp[32ma[32m_[32ms[32mu[32mp[32mp[32ml[32mi[32mc[32ma[32mn[32mt[39m[17C[4m/[4me[4mt[4mc[4m/[4mw[4mp[4ma[4m_[4ms[4mu[4mp[4mp[4ml[4mi[4mc[4ma[4mn[4mt[4m/[4mw[4mp[4ma[4m_[4ms[4mu[4mp[4mp[4ml[4mi[4mc[4ma[4mn[4mt[4m.[4mc[4mo[4mn[4mf[24m[?1l>[?2004l
+]2;sudo wpa_supplicant -B -i wlp3s0 -c /etc/wpa_supplicant/wpa_supplicant.conf]1;wpa_supplicantSuccessfully initialized wpa_supplicant
+[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~]1;~[0m[27m[24m[J[01;35msc [01;32m➜  [36m~[00m [K[?1h=[?2004h[H[2J[0m[27m[24m[J[01;35msc [01;32m➜  [36m~[00m [K[7m[32mwpa_cli[27m[39m[27m[32mw[27m[32mp[27m[32ma[27m[32m_[27m[32mc[27m[32ml[27m[32mi[39m[?1l>[?2004l
+]2;wpa_cli]1;wpa_cliwpa_cli v2.4
+Copyright (c) 2004-2015, Jouni Malinen <j@w1.fi> and contributors
+
+This software may be distributed under the terms of the BSD license.
+See README for more details.
+
+
+
+Interactive mode
+
+Could not connect to wpa_supplicant: (nil) - re-trying
+su  ^C[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~]1;~[0m[27m[24m[J[01;35msc [01;32m➜  [36m~[00m [K[?1h=[?2004h[1m[31ms[0m[39m[90mudo wpa_supplicant -B -i wlp3s0 -c /etc/wpa_supplicant/wpa_supplicant.c[90mo[90mnf[39m[K[A[6C[0m[32ms[32mu[39m[1m[31ms[1m[31mu[1m[31md[0m[39m[0m[4m[32ms[0m[4m[32mu[0m[4m[32md[4m[32mo[24m[39m[39m [1m[31m![0m[39m[K[1B[K[A[14C[0m[34m![34m![39m[?1l>[?2004l[1B[1m[7m%[27m[1m[0m                                                                                ]2;dabrowk1@sc: ~]1;~[0m[27m[24m[J[01;35msc [01;32m➜  [36m~[00m sudo wpa_cli[K[?1h=[?2004h[12D[4m[32ms[4m[32mu[4m[32md[4m[32mo[24m[39m [32mw[32mp[32ma[32m_[32mc[32ml[32mi[39m[?1l>[?2004l
+]2;sudo wpa_cli]1;wpa_cliwpa_cli v2.4
+Copyright (c) 2004-2015, Jouni Malinen <j@w1.fi> and contributors
+
+This software may be distributed under the terms of the BSD license.
+See README for more details.
+
+
+Selected interface 'wlp3s0'
+
+Interactive mode
+
+> sca[Kan
+OK
+> <3>CTRL-EVENT-SCAN-STARTED 
+> <3>CTRL-EVENT-SCAN-RESULTS 
+> <3>WPS-AP-AVAILABLE 
+> scan_results
+bssid / frequency / signal level / flags / ssid
+06:d6:aa:d5:cd:af	2462	-50	[WPA2-PSK-CCMP][ESS]	AndroidAP7626u
+00:24:14:31:8a:f5	2462	-61	[WPA2-EAP-CCMP][ESS]	pw.edu.pl
+00:24:14:31:8a:f3	2462	-62	[WPA2-EAP-CCMP][ESS]	eduroam
+00:24:14:31:8a:f4	2462	-63	[WPA2-EAP-CCMP][ESS]	pwwifi2
+60:e3:27:36:b2:de	2422	-70	[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][ESS]	OPTO_B
+f0:9f:c2:7d:8c:40	2412	-70	[WPA2-EAP-CCMP][ESS]	ZETIS
+ac:22:0b:99:c3:bc	2447	-70	[WPA2-PSK-CCMP][ESS]	ZWNIKE_B
+90:f6:52:43:88:e0	2427	-77	[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][WPS][ESS]	GE116
+00:25:9c:42:26:fa	2437	-7
