@@ -54,6 +54,7 @@ Wyniki analizy sieci pokazuje rysunek \ref{fig:wifiAnalizer}.
 
 Dodatkowo przeskanowałem dostępne sieci przy pomocy polecenia \texttt{nmcli device wifi list}.
 
+\footnotesize
 \begin{verbatim}
 *  SSID                  MODE   CHAN  RATE    SIGNAL  SECURITY
 konferencja           Infra  11    54 Mbit/s  74      WEP
@@ -94,6 +95,7 @@ pwwifi                Infra  1     54 Mbit/s  37      --
 pwwifi-students       Infra  1     54 Mbit/s  24      --
 pwwifi-students       Infra  1     54 Mbit/s  20      --
 \end{verbatim}
+\normalsize
 
 \section{Schemat sieci}
 Strukturę urządzeń w sieci przedstawia rysunek \ref{fig:SchematSieci}.
@@ -182,7 +184,7 @@ Po podłączeniu do sieci \textbf{pw.edu.pl} stan interfejsów i tras wyglądał
        valid_lft forever preferred_lft forever
 \end{verbatim}
 
-\footnotesize{}
+\small{}
 \begin{verbatim}
     netstat -nr
 
