@@ -1,4 +1,4 @@
-\documentclass{mwart} % Polska wersja klasy article
+\documentclass{article} % Polska wersja klasy article
 
 \usepackage{polski} % Pozwala na użycie polskiego. Ustawia między innymi fontenc na T1
 \usepackage[utf8]{inputenc} % Informuje o kodowaniu
@@ -9,7 +9,7 @@
 
 \usepackage{graphicx}
 \graphicspath{ {./Obrazy/} }
-% \usepackage{subcaption} % Subfigury
+\usepackage{subcaption} % Subfigury
 \usepackage{float} % Pozycjonowanie figur
 \usepackage{mwe} % Tymczasowe grafiki
 
@@ -37,20 +37,22 @@ Przy pomocy aplikacji \textit{Wifi Analyzer} przeskanowałem dostępne sieci rad
 Wyniki analizy sieci pokazuje rysunek \ref{fig:wifiAnalizer}.
 
 %TODO: Skompilować gdzieś, gdzie subfigure działa
-% \begin{figure}[H]
-%     \centering
-%     \begin{subfigure}[b]{0.49\textwidth}
-%         \centering
-%         \includegraphics[width=0.4\textwidth]{Sieci-2,4GH}
-%         \caption{Sieci na częstotliwości 2,4GHz}
-%     \end{subfigure}
-%     \begin{subfigure}[b]{0.49\textwidth}
-%         \centering
-%         \includegraphics[width=0.4\textwidth]{Sieci-5GH}
-%         \caption{Sieci na częstotliwości 5GHz}
-%     \end{subfigure}
-%     \label{fig:wifiAnalizer}
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.4\textwidth]{Sieci-2,4GH}
+        \caption{Sieci na częstotliwości 2,4GHz}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.4\textwidth]{Sieci-5GH}
+        \caption{Sieci na częstotliwości 5GHz}
+    \end{subfigure}
+
+    \caption{Analiza sieci radiowej}
+    \label{fig:wifiAnalizer}
+\end{figure}
 
 Dodatkowo przeskanowałem dostępne sieci przy pomocy polecenia \texttt{nmcli device wifi list}.
 
@@ -108,6 +110,7 @@ Strukturę urządzeń w sieci przedstawia rysunek \ref{fig:SchematSieci}.
   \label{fig:SchematSieci}
 \end{figure}
 
+\newpage{}
 \section{Podłączenie do sieci wifi w środowisku graficznym}
 W celu przyłączenia do sieci skorzystam z nakładki graficznej na program \textit{NetworkManager} wbudowanej w system Ubuntu.
 \vspace{5 mm}
