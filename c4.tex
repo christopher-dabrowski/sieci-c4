@@ -14,10 +14,13 @@
 \usepackage{mwe} % Tymczasowe grafiki
 
 \usepackage{listings} % Listingi kodu
-\lstset{basicstyle=\ttfamily,
+\lstset{
   showstringspaces=false,
   commentstyle=\color{gray},
-  keywordstyle=\color{blue}
+  keywordstyle=\color{blue},
+  basicstyle=\small\ttfamily,
+  columns=flexible,
+  breaklines=true
 }
 
 \title{Laboratorium sieci komputerowych - c4 \\ Sieci bezprzewodowe}
@@ -116,26 +119,26 @@ W celu przyłączenia do sieci skorzystam z nakładki graficznej na program \tex
 \vspace{5 mm}
 
 Przed podłączeniem sprawdziłem stan interfejsu radiowego poleceniem \texttt{ip~a}.
-\begin{verbatim}
+\begin{lstlisting}
     ip a
 
     4: wlp2s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
     link/ether 00:24:d7:92:0e:dc brd ff:ff:ff:ff:ff:ff
-\end{verbatim}
+\end{lstlisting}
 
 Oraz tablicę tras, poleceniem \texttt{ip r}.
-\begin{verbatim}
+\begin{lstlisting}
     ip r 
 
     default via 10.146.146.5 dev eno2
     10.146.0.0/16 dev eno2  proto kernel  scope link  src 10.146.225.1
-\end{verbatim}
+\end{lstlisting}
 
 Z otrzymanych wyników wiać, że interfejs radiowy jest \textbf{nieaktywny} a trasa domyślna wiedzie przez interfejs fizyczny.
 \vspace{5 mm}
 
 Po podłączeniu do sieci \textbf{ZETIS} wyniki tych poleceń wyglądały następująco:
-\begin{verbatim}
+\begin{lstlisting}
     ip a
 
     4: wlp2s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq
@@ -145,9 +148,9 @@ Po podłączeniu do sieci \textbf{ZETIS} wyniki tych poleceń wyglądały nastę
        valid_lft 3601sec preferred_lft 3601sec
     inet6 fe80::224:d7ff:fe7d:ba8c/64 scope link 
        valid_lft forever preferred_lft forever
-\end{verbatim}
+\end{lstlisting}
 
-\begin{verbatim}
+\begin{lstlisting}
     ip r 
 
     default via 10.146.146.5 dev eno2 
@@ -156,26 +159,26 @@ Po podłączeniu do sieci \textbf{ZETIS} wyniki tych poleceń wyglądały nastę
     10.146.0.0/16 dev eno2  proto kernel  scope link  src 10.146.225.3 
     169.254.0.0/16 dev wlp2s0  scope link  metric 1000 
     192.0.2.4 via 10.68.0.1 dev wlp2s0  proto dhcp  metric 600 
-\end{verbatim}
+\end{lstlisting}
 
 Widać, że interfejs radiowy \texttt{wlp2s0} jest teraz włączony oraz skonfigurowany.
 Do tablicy tras została dodana nowa domyślna trasa prowadząca przez interfejs radiowy.
 \vspace{5 mm}
 
 Dodatkowo pobrałem logi z serwera RADIUS połączeniem komend \texttt{ssh ldap grep -w \$USER /var/log/radiusd | tail -2}.
-\begin{verbatim}
+\begin{lstlisting}
     ssh ldap grep -w \$USER /var/log/radiusd | tail -2
 
     Mon May 13 17:01:43 2019 : Auth: (2156)   Login OK: [dabrowk1] 
         (from client ap225 port 0 via TLS tunnel)
     Mon May 13 17:01:43 2019 : Auth: (2156) Login OK: [dabrowk1]
         (from client ap225 port 0 cli 00-22-3F-01-F9-12)
-\end{verbatim}
+\end{lstlisting}
 Z zebranych logów wynika, że serwer RADIUS zaakceptował podane dane dostępowe.
 
 Po podłączeniu do sieci \textbf{pw.edu.pl} stan interfejsów i tras wyglądał następująco:
 
-\begin{verbatim}
+\begin{lstlisting}
     ip a
 
     5: wlx00223f01f912: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq
@@ -185,10 +188,9 @@ Po podłączeniu do sieci \textbf{pw.edu.pl} stan interfejsów i tras wyglądał
        valid_lft 3387sec preferred_lft 3387sec
     inet6 fe80::222:3fff:fe01:f912/64 scope link 
        valid_lft forever preferred_lft forever
-\end{verbatim}
+\end{lstlisting}
 
-\small{}
-\begin{verbatim}
+\begin{lstlisting}
     netstat -nr
 
     Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
@@ -198,8 +200,7 @@ Po podłączeniu do sieci \textbf{pw.edu.pl} stan interfejsów i tras wyglądał
     10.146.0.0      0.0.0.0         255.255.0.0     U         0 0          0 eno1
     169.254.0.0     0.0.0.0         255.255.0.0     U         0 0          0 wlx00223f01f912
     192.0.2.4       10.68.0.1       255.255.255.255 UGH       0 0          0 wlx00223f01f912
-\end{verbatim}
-\normalsize{}
+\end{lstlisting}
 
 \section{Podłączenie w środowisku tekstowym na Ubuntu}
 Domyślnie konfiguracją interfejsów radiowych zarządza program \textit{NetworkManager}. Musiałem go wyłączyć by dokonać ręcznej konfiguracji.
@@ -207,21 +208,21 @@ Domyślnie konfiguracją interfejsów radiowych zarządza program \textit{Networ
 Wyłączyłem ten program przy pomocy poleceń \texttt{sudo systemctl stop NetworkManager.service} oraz \texttt{sudo systemctl disable NetworkManager.service}.
 
 Aby sprawdzić czy serwis został wyłączony wywołałem \texttt{sudo systemctl status NetworkManager.service}.
-\begin{verbatim}
+\begin{lstlisting}
     sudo systemctl status NetworkManager.service
 
     * NetworkManager.service - Network Manager
    Loaded: loaded (/lib/systemd/system/NetworkManager.service; disabled; vendor
    Active: inactive (dead) since pon 2019-05-13 17:51:50 CEST
     Main PID: 1458 (code=exited, status=0/SUCCESS)
-\end{verbatim}
+\end{lstlisting}
 \vspace{5 mm}
 
 \subsection{Połączenie do sieci} \label{sub:wpaUbuntu}
 Do połączenia się z siecią ZETIS skorzystam z programu \texttt{wpa\_supplicant}.
 
 Plik konfiguracyjny wygenerowałem poleceniem \texttt{wpa-config-zetis}. Ma on następującą treść:
-\begin{verbatim}
+\begin{lstlisting}
     trl_interface=/var/run/wpa_supplicant  # dla wpa_cli
 
     eapol_version=1
@@ -235,7 +236,7 @@ Plik konfiguracyjny wygenerowałem poleceniem \texttt{wpa-config-zetis}. Ma on n
         identity="dabrowk1"   # login
         password=hash:73a1da770586527f5d97f02a136a7795        # haslo 
     }
-\end{verbatim}
+\end{lstlisting}
 Wygenerowany plik zapisałem w katalogu \texttt{/etc/wpa\_supplicant/wpa\_supplicant.conf}.
 
 \vspace{5 mm}
@@ -243,43 +244,43 @@ Uruchomiłem demona wpa\_supplicant poleceniem \\\texttt{sudo wpa\_supplicant -B
 Po wykonaniu tego polecenia system wyświetlił komunikat \texttt{Successfully initialized wpa\_supplicant}.
 
 \paragraph{Stan interfejsu radiowego} po wykonaniu tych czynności uległ zmianie.
-\begin{verbatim}
+\begin{lstlisting}
     ip a
 
     4: wlp2s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
     link/ether 00:24:d7:92:0e:dc brd ff:ff:ff:ff:ff:ff
-\end{verbatim}
+\end{lstlisting}
 Widać, że jest teraz włączony.
 
 \paragraph{Pobranie adresu ip} na interfejsie radiowym wykonałem poleceniem \texttt{sudo dhclient wlp2s0}. Oraz sprawdziłem otrzymany adres poleceniem \texttt{ip}.
-\begin{verbatim}
+\begin{lstlisting}
     ip a
 
     4: wlp2s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
     link/ether 00:24:d7:92:0e:dc brd ff:ff:ff:ff:ff:ff
     inet 10.146.90.130/16 brd 10.146.255.255 scope global wlp2s0
        valid_lft forever preferred_lft forever
-\end{verbatim}
+\end{lstlisting}
 
 \paragraph{Dziennik RADIUS} został zaktualizowany o wpis dotyczący tego połączenia.
 Przeczytałem jego zawartość poleceniem \texttt{ssh ldap grep -w \$USER /var/log/radiusd | tail -2}
-\begin{verbatim}
+\begin{lstlisting}
     ssh ldap grep -w $USER /var/log/radiusd | tail -2
 
     Mon May 20 21:57:20 2019 : Auth: (1401)   Login OK: [dabrowk1] 
         (from client ap225 port 0 via TLS tunnel) 
     Mon May 20 21:57:20 2019 : Auth: (1402) Login OK: [dabrowk1] 
         (from client ap225 port 0 cli 00-24-D7-92-0E-DC)
-\end{verbatim}
+\end{lstlisting}
 
 \paragraph{Dziennik DHCP} również posiada wpis opisujący przydzielenie adresu.
-\begin{verbatim}
+\begin{lstlisting}
     cat /var/log/syslog | grep -Ei 'dhcp' | tail -3
 
     May 20 20:03:33 s1 dhclient[8615]: DHCPOFFER of 10.146.90.130 from 10.146.146.25 
     May 20 20:03:33 s1 dhclient[8615]: DHCPACK of 10.146.90.130 from 10.146.146.25
     May 20 20:03:33 s1 dabrowk1: /etc/dhcp/dhclient-enter-hooks.d/avahi-autoipd returned non-zero exit status 1
-\end{verbatim}
+\end{lstlisting}
 
 Mogę przeczytać szczegóły przydzielonych dynamicznie wartości poleceniem \texttt{cat /var/lib/dhcp/dhclient.leases}.
 
@@ -290,31 +291,31 @@ Usunąłem trasę domyślną przez interfejs \texttt{eno2} poleceniem \texttt{su
 \vspace{2mm}
 
 Stan tablicy tras po zmianie:
-\begin{verbatim}
+\begin{lstlisting}
     ip r
 
     default via 10.146.146.5 dev wlp2s0  
     10.146.0.0/16 dev eno2  proto kernel  scope link  src 10.146.225.1
     10.146.0.0/16 dev wlp2s0  proto kernel  scope link  src 10.146.90.130
-\end{verbatim}
+\end{lstlisting}
 
 \subsection{Sprawdzenie trasy pakietów}
 By zweryfikować czy ustawiona trasa działa poprawnie skorzystałem z poleceń \texttt{traceroute} i \texttt{ping}.
 
-\begin{verbatim}
+\begin{lstlisting}
     traceroute  volt
 
     1  * * * 
     2  volt.iem.pw.edu.pl (194.29.146.3)  6.531 ms  6.535 ms  6.539 ms
-\end{verbatim}
+\end{lstlisting}
 Widać, że trasa wygląda inaczej niż gdy połączenie było przez interfejs eno2.
 
-\begin{verbatim}
+\begin{lstlisting}
     ping -c 1 google.com
 
     PING google.com (172.217.16.14) 56(84) bytes of data. 
     64 bytes from mil02s06-in-f14.1e100.net (172.217.16.14): icmp_seq=1 ttl=54 time=114 ms 
-\end{verbatim}
+\end{lstlisting}
 Po wyniku pinga widać większe opóźnienie (114 ms) co jest charakterystyczne dla sieci radiowych.
 
 \section{Podłączenie w środowisku tekstowym na FreeBSD}
@@ -331,7 +332,7 @@ Do wykonania tych akcji wykorzystam skrypt \texttt{sterowniki}. \\
 \vspace{3 mm}
 
 Poprawność utworzenia interfejsu mogę sprawdzić poleceniem \texttt{ifconfig}.
-\begin{verbatim}
+\begin{lstlisting}
     ifconfig wlan0
 
     wlan0: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> metric 0 mtu 1500
@@ -345,7 +346,7 @@ Poprawność utworzenia interfejsu mogę sprawdzić poleceniem \texttt{ifconfig}
         media: IEEE 802.11 Wireless Ethernet MCS mode 11ng
         status: associated
         nd6 options=21<PERFORMNUD,AUTO_LINKLOCAL>
-\end{verbatim}
+\end{lstlisting}
 
 \subsection{Podłączenie do sieci}
 Do połączenia się z siecią ZETIS skorzystam z programu \texttt{wpa\_supplicant}.
@@ -358,7 +359,7 @@ Po wykonaniu tego polecenia system wyświetlił komunikat \texttt{Successfully i
 
 \paragraph{Zmina ustawień interfejsu} \mbox{} \\
 Poleceniem \texttt{ifconfig} zaobserwowałem zmianę w ustawieniach interfejsu.
-\begin{verbatim}
+\begin{lstlisting}
     ifconfig wlan0
 
     wlan0: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> metric 0 mtu 1500 
@@ -373,10 +374,10 @@ Poleceniem \texttt{ifconfig} zaobserwowałem zmianę w ustawieniach interfejsu.
         media: IEEE 802.11 Wireless Ethernet MCS mode 11ng
         status: associated
         nd6 options=21<PERFORMNUD,AUTO_LINKLOCAL>
-\end{verbatim}
+\end{lstlisting}
 
 Przeanalizowałem też tablicę tras.
-\begin{verbatim}
+\begin{lstlisting}
     netstat -r
 
     Destination        Gateway            Flags     Netif Expire 
@@ -385,38 +386,38 @@ Przeanalizowałem też tablicę tras.
     10.146.0.0/16      link#1             U           em0        
     s3.iem.pw.edu.pl   link#1             UHS         lo0        
     localhost          link#3             UH          lo0       
-\end{verbatim}
+\end{lstlisting}
 
 \paragraph{Pobranie adresu IP} \mbox{} \\
 Pobrałem adres IP poleceniem \texttt{dhclient wlan0}
 
 Sprawdziłem rezultaty pobrania adresu:
-\begin{verbatim}
+\begin{lstlisting}
     ifconfig wlan0
 
     ...
     inet 192.168.225.3 netmask 0xffff0000 broadcast 192.168.255.255
     ...
-\end{verbatim}
+\end{lstlisting}
 
 \paragraph{Dziennik RADIUS} został zaktualizowany o wpis dotyczący tego połączenia.
 Przeczytałem jego zawartość poleceniem \texttt{ssh dabrowk1@ldap grep -w dabrowk1 /var/log/radiusd | tail -2 }
-\begin{verbatim}
+\begin{lstlisting}
     Tue May 21 10:14:05 2019 : Auth: (1718)   Login OK: [dabrowk1] (from client ap225 port 0 via TLS tunnel)
     Tue May 21 10:14:05 2019 : Auth: (1719) Login OK: [dabrowk1] (from client ap225 port 0 cli 00-24-D7-7D-BA-8C)
-\end{verbatim}
+\end{lstlisting}
 
 \paragraph{Dziennik DHCP} również posiada wpis opisujący przydzielenie adresu.
-\begin{verbatim}
+\begin{lstlisting}
     ssh dabrowk1@ldap grep -w 00:24:d7:7d:ba:8c /var/log/dhcpd | tail -3
 
     May 21 10:22:53 ldap dhcpd[1311]: DHCPOFFER on 192.168.225.3 to 00:24:d7:7d:ba:8c via vmx0
     May 21 10:22:55 ldap dhcpd[1311]: DHCPREQUEST for 192.168.225.3 (192.168.146.3) from 00:24:d7:7d:ba:8c via vmx0
     May 21 10:22:55 ldap dhcpd[1311]: DHCPACK on 192.168.225.3 to 00:24:d7:7d:ba:8c via vmx0
-\end{verbatim}
+\end{lstlisting}
 
 Mogę przeczytać szczegóły przydzielonych dynamicznie wartości poleceniem \texttt{cat /var/db/dhclient.leases.wlan0}.
-\begin{verbatim}
+\begin{lstlisting}
     cat /var/db/dhclient.leases.wlan0
 
     lease {
@@ -431,12 +432,12 @@ Mogę przeczytać szczegóły przydzielonych dynamicznie wartości poleceniem \t
     option domain-name "iem.pw.edu.pl";
     option dhcp-server-identifier 192.168.146.3;
     }
-\end{verbatim}
+\end{lstlisting}
 
 \subsection{Zmiana tablicy tras}
 By ruch przechodził przez interfejs radiowy trzeba ustawić odpowiednią domyślną trasę.
 Aktualie jedyna domyślna trasa przechodzi przez interfejs em0.
-\begin{verbatim}
+\begin{lstlisting}
     netstat -r4n
 
     Destination        Gateway            Flags     Netif Expire
@@ -447,44 +448,44 @@ Aktualie jedyna domyślna trasa przechodzi przez interfejs em0.
     127.0.0.1          link#3             UH          lo0
     192.168.0.0/16     link#4             U         wlan0
     192.168.225.3      link#4             UHS         lo0
-\end{verbatim}
+\end{lstlisting}
 
 Trasa do serwera volt wygląda następująco
-\begin{verbatim}
+\begin{lstlisting}
     traceroute volt
 
     traceroute to volt.iem.pw.edu.pl (194.29.146.3), 64 hops max, 40 byte packets 
     1  nat2 (10.146.146.5)  0.552 ms  0.517 ms  0.335 ms 
     2  volt (194.29.146.3)  0.463 ms  0.521 ms  0.430 ms
-\end{verbatim}
+\end{lstlisting}
 
 Usunąłem domyślną trasę poleceniem \texttt{route delete default10.146.146.5} oraz ustawiłem nową poleceniem \texttt{route add default192.168.146.3}. Nowy adres bramy odczytałem z pliku \texttt{dhclient.leases.wlan0}.
 
 Stan tablicy tras po zmianie
-\begin{verbatim}
+\begin{lstlisting}
     netstat -rn4
 
     Destination        Gateway            Flags     Netif Expire
     0.0.0.0/8          link#2             U           em1
     default            192.168.146.3      UGS       wlan0
     ...
-\end{verbatim}
+\end{lstlisting}
 
 \subsection{Sprawdzenie połączenia}
 Trasa do serwera volt wygląda teraz następująco
-\begin{verbatim}
+\begin{lstlisting}
     traceroute volt
 
     traceroute to volt.iem.pw.edu.pl (194.29.146.3), 64 hops max, 40 byte packets
     1  volt (194.29.146.3)  3.256 ms  5.527 ms  1.503 ms
-\end{verbatim}
+\end{lstlisting}
 
 Komunikacja z zewnętrznymi serwerami równiż jest możliwa.
-\begin{verbatim}
+\begin{lstlisting}
     ping -c 1 google.com                                                                                                             
     PING google.com (172.217.16.14): 56 data bytes 
     64 bytes from 172.217.16.14: icmp_seq=0 ttl=54 time=13.145 ms
-\end{verbatim}
+\end{lstlisting}
 
 \subsection{Zakończenie pracy}
 By nie zostaiwać interfejsu radiowego włączonego usunąłem go poleceniem \texttt{ifconfig wlan0 destroy}
